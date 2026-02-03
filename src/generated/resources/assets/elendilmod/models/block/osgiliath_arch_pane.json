@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bottom": "elendilmod:block/transparent",
+    "side": "elendilmod:block/osgiliath_arch_pane",
+    "top": "elendilmod:block/osgiliath_rubble_1"
+  }
+}

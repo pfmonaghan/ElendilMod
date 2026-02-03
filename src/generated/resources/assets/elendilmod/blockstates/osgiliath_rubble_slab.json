@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "elendilmod:block/osgiliath_rubble_slab"
+    },
+    "type=double": {
+      "model": "elendilmod:block/osgiliath_rubble_1"
+    },
+    "type=top": {
+      "model": "elendilmod:block/osgiliath_rubble_slab_top"
+    }
+  }
+}

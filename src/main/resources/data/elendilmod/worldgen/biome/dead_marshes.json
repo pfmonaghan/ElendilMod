@@ -1,0 +1,108 @@
+{
+    
+  "attributes": {
+    
+    "minecraft:audio/background_music": {
+      "default": {
+        "max_delay": 24000,
+        "min_delay": 12000,
+        "sound": "minecraft:music.overworld.swamp"
+      }
+    },
+    "minecraft:gameplay/increased_fire_burnout": true,
+    "minecraft:visual/sky_color": "#78a7ff",
+    "minecraft:visual/water_fog_color": "#232317",
+    "minecraft:visual/water_fog_end_distance": {
+      "argument": 0.85,
+      "modifier": "multiply"
+    }
+  },
+  "carvers": {
+
+  },
+  "downfall": 0.9,
+  "effects": {
+    "sky_color": 8025974,
+    "fog_color": 7434607,
+    "dry_foliage_color": 10258546,
+    "foliage_color": 10258546,
+    "water_color": 5398601,
+    "water_fog_color": 3028786
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff",
+      "minecraft:ore_coal_upper",
+      "minecraft:ore_coal_lower",
+      "minecraft:ore_iron_upper",
+      "minecraft:ore_iron_middle",
+      "minecraft:ore_iron_small",
+      "minecraft:ore_gold",
+      "minecraft:ore_gold_lower",
+      "minecraft:ore_redstone",
+      "minecraft:ore_redstone_lower",
+      "minecraft:ore_diamond",
+      "minecraft:ore_diamond_medium",
+      "minecraft:ore_diamond_large",
+      "minecraft:ore_diamond_buried",
+      "minecraft:ore_lapis",
+      "minecraft:ore_lapis_buried",
+      "minecraft:ore_copper",
+      "minecraft:underwater_magma",
+      "minecraft:disk_clay"
+    ],
+    [],
+    [
+      "minecraft:spring_water"
+    ],
+    [
+      "minecraft:glow_lichen",
+      "minecraft:flower_swamp",
+      "minecraft:patch_grass_normal",
+      "minecraft:patch_dead_bush",
+      "minecraft:patch_waterlily",
+      "minecraft:brown_mushroom_swamp",
+      "minecraft:red_mushroom_swamp",
+      "minecraft:patch_sugar_cane_swamp",
+      "minecraft:seagrass_swamp"
+    ],
+    []
+  ],
+  "spawn_costs": {},
+  "has_precipitation": true,
+  "spawners": {
+    "ambient": [
+    ],
+    "axolotls": [],
+    "creature": [
+    ],
+    "misc": [],
+    "monster": [    
+      {
+        "type": "minecraft:bogged",
+        "maxCount": 4,
+        "minCount": 0,
+        "weight": 30
+      }
+    ],
+    "underground_water_creature": [
+    ],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.8
+}

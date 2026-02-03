@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "elendilmod:block/osgiliath_rubble_1",
+    "side": "elendilmod:block/osgiliath_rubble_1",
+    "top": "elendilmod:block/osgiliath_rubble_1"
+  }
+}

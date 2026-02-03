@@ -1,0 +1,61 @@
+{
+    "type": "elendilmod:lotr",
+"generator": {
+    "type": "minecraft:noise",
+    "settings": "minecraft:large_biomes",
+    "biome_source": {
+        "type": "minecraft:multi_noise",
+        "biomes":[
+            {
+            "biome": "minecraft:jagged_peaks",
+        "parameters": {
+            "continentalness": 0.6,
+            "depth": 0,
+            "erosion": 0.1,
+            "humidity": 0,
+            "offset": 0,
+            "temperature": -0.8,
+            "weirdness": 0 
+        }
+        },
+        {
+            "biome": "minecraft:stony_peaks",
+        "parameters": {
+            "continentalness": 1.3,
+            "depth": 0,
+            "erosion": 0.2,
+            "humidity": 0,
+            "offset": 0,
+            "temperature": -0.3,
+            "weirdness": 0
+        }
+        },
+        {
+            "biome": "elendilmod:osgiliath",
+        "parameters": {
+            "continentalness": 1.2,
+            "depth": 0,
+            "erosion": 0,
+            "humidity": 0,
+            "offset": 0,
+            "temperature": 0.8,
+            "weirdness": 0 
+        }
+        },
+        {
+            "biome": "elendilmod:dead_marshes",
+        "parameters": {
+            "continentalness": 1.7,
+            "depth": 0,
+            "erosion": 0,
+            "humidity": 0.8,
+            "offset": 0,
+            "temperature": 0.5,
+            "weirdness": 0
+        }
+        }
+
+    ]
+    }
+    }
+}

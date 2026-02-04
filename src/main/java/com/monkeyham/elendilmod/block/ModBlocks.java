@@ -1,9 +1,7 @@
 package com.monkeyham.elendilmod.block;
 
 import com.monkeyham.elendilmod.ElendilMod;
-import com.monkeyham.elendilmod.block.custom.MordorMerlonBlock;
-import com.monkeyham.elendilmod.block.custom.OsgiliathArch2;
-import com.monkeyham.elendilmod.block.custom.OsgiliathQuarterDome;
+import com.monkeyham.elendilmod.block.custom.*;
 import com.monkeyham.elendilmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -24,11 +22,35 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> OSGILIATH_RUBBLE_1 = registerBlock("osgiliath_rubble_1",
             ()-> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+
     public static final DeferredBlock<SlabBlock> OSGILIATH_RUBBLE_SLAB = registerBlock("osgiliath_rubble_slab",
             ()-> new SlabBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<StairBlock> OSGILIATH_RUBBLE_STAIRS = registerBlock("osgiliath_rubble_stairs",
             ()-> new StairBlock(ModBlocks.OSGILIATH_RUBBLE_1.get().defaultBlockState(), BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
-    public static final DeferredBlock<Block> OSGILIATH_ARCH_PANE = registerBlock("osgiliath_arch_pane",
+
+
+    public static final DeferredBlock<Block> OSGILIATH_STONE_1 = registerBlock("osgiliath_stone_1",
+            ()-> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<SlabBlock> OSGILIATH_STONE_1_SLAB = registerBlock("osgiliath_stone_1_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<StairBlock> OSGILIATH_STONE_1_STAIRS = registerBlock("osgiliath_stone_1_stairs",
+            ()-> new StairBlock(ModBlocks.OSGILIATH_STONE_1.get().defaultBlockState(), BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+
+    public static final DeferredBlock<Block> OSGILIATH_ROOF_TILE_1 = registerBlock("osgiliath_roof_tile_1",
+            ()-> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<SlabBlock> OSGILIATH_ROOF_TILE_1_SLAB = registerBlock("osgiliath_roof_tile_1_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<StairBlock> OSGILIATH_ROOF_TILE_1_STAIRS = registerBlock("osgiliath_roof_tile_1_stairs",
+            ()-> new StairBlock(ModBlocks.OSGILIATH_ROOF_TILE_1.get().defaultBlockState(),BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+
+    public static final DeferredBlock<Block> OSGILIATH_STONE_BRICK_1 = registerBlock("osgiliath_stone_brick_1",
+            ()-> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<SlabBlock> OSGILIATH_STONE_BRICK_1_SLAB = registerBlock("osgiliath_stone_brick_1_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<StairBlock> OSGILIATH_STONE_BRICK_1_STAIRS = registerBlock("osgiliath_stone_brick_1_stairs",
+            ()-> new StairBlock(ModBlocks.OSGILIATH_STONE_BRICK_1.get().defaultBlockState(),BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+
+public static final DeferredBlock<Block> OSGILIATH_ARCH_PANE = registerBlock("osgiliath_arch_pane",
             ()-> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noCollission()));
     public static final DeferredBlock<Block> OSGILIATH_ARCH_PANE_BOTTOM = registerBlock("osgiliath_arch_pane_bottom",
             ()-> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noCollission()));
@@ -40,11 +62,19 @@ public class ModBlocks {
             ()->new MordorMerlonBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.METAL).noOcclusion()));
     public static final DeferredBlock<Block> OSGILIATH_QUARTER_DOME = registerBlock("osgiliath_quarter_dome",
             ()->new OsgiliathQuarterDome(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noOcclusion()));
+    public static final DeferredBlock<Block> OSGILIATH_PILLAR_1 = registerBlock("osgiliath_pillar_1",
+            ()->new OsgiliathPillar(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noOcclusion()));
+    public static final DeferredBlock<Block> AMON_HEN_STATUE_EAGLE = registerBlock("amon_hen_statue_eagle",
+            ()->new OrientableBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noOcclusion()));
+    public static final DeferredBlock<Block> OSGILIATH_DOME_9x9 = registerBlock("osgiliath_dome_9x9",
+            ()->new OrientableBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noOcclusion()));
 
     public static final DeferredBlock<Block> DEAD_MARSHES_GRASS_1 = registerBlock("dead_marshes_grass_1",
             ()->new Block(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.GRASS).noOcclusion().noCollission()));
     public static final DeferredBlock<Block> DEAD_MARSHES_GRASS_2 = registerBlock("dead_marshes_grass_2",
             ()->new Block(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.GRASS).noOcclusion().noCollission()));
+    public static final DeferredBlock<Block> DEAD_MARSHES_CORPSE_CANDLE = registerBlock("dead_marshes_corpse_candle",
+            ()->new Block(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SOUL_SAND).noOcclusion().noCollission().noLootTable()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block)
     {

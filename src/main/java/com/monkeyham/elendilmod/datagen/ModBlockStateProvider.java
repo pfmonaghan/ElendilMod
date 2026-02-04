@@ -4,6 +4,9 @@ import com.monkeyham.elendilmod.ElendilMod;
 import com.monkeyham.elendilmod.block.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -25,6 +28,21 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 "elendilmod:block/" + ModBlocks.OSGILIATH_RUBBLE_SLAB.getId().getPath()));
         stairsBlock(ModBlocks.OSGILIATH_RUBBLE_STAIRS.get(), blockTexture(ModBlocks.OSGILIATH_RUBBLE_1.get()));
         blockItem(ModBlocks.OSGILIATH_RUBBLE_STAIRS);
+
+        blockWithItem(ModBlocks.OSGILIATH_STONE_1);
+        slabBlockWithItem(ModBlocks.OSGILIATH_STONE_1_SLAB, ModBlocks.OSGILIATH_STONE_1);
+        stairBlockWithItem(ModBlocks.OSGILIATH_STONE_1_STAIRS, ModBlocks.OSGILIATH_STONE_1);
+
+        blockWithItem(ModBlocks.OSGILIATH_ROOF_TILE_1);
+        slabBlockWithItem(ModBlocks.OSGILIATH_ROOF_TILE_1_SLAB, ModBlocks.OSGILIATH_ROOF_TILE_1);
+        stairBlockWithItem(ModBlocks.OSGILIATH_ROOF_TILE_1_STAIRS, ModBlocks.OSGILIATH_ROOF_TILE_1);
+
+        blockWithItem(ModBlocks.OSGILIATH_STONE_BRICK_1);
+        slabBlockWithItem(ModBlocks.OSGILIATH_STONE_BRICK_1_SLAB, ModBlocks.OSGILIATH_STONE_BRICK_1);
+        stairBlockWithItem(ModBlocks.OSGILIATH_STONE_BRICK_1_STAIRS, ModBlocks.OSGILIATH_STONE_BRICK_1);
+
+
+
         archBlockWithItem(ModBlocks.OSGILIATH_ARCH_1, "block/osgiliath_arch_1");
         simpleBlockWithItem(ModBlocks.OSGILIATH_ARCH_PANE.get(), models().cubeBottomTop("block/osgiliath_arch_pane", modLoc("block/osgiliath_arch_pane"),
                 modLoc("block/transparent"), modLoc("block/osgiliath_rubble_1")).renderType("cutout"));
@@ -33,6 +51,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         simpleBlockWithItem(ModBlocks.DEAD_MARSHES_GRASS_1.get(), models().cross("dead_marshes_grass_1", modLoc("block/dead_marshes_grass_1")).renderType("cutout"));
         simpleBlockWithItem(ModBlocks.DEAD_MARSHES_GRASS_2.get(), models().cross("dead_marshes_grass_2", modLoc("block/dead_marshes_grass_2")).renderType("cutout"));
+        simpleBlockWithItem(ModBlocks.DEAD_MARSHES_CORPSE_CANDLE.get(), models().cross("dead_marshes_corpse_candle", modLoc("block/dead_marshes_corpse_candle")).renderType("cutout"));
 
     }
 
@@ -57,5 +76,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(deferredBlock.get(), models().orientableWithBottom(parent, side, front, bottom, top).renderType("cutout"));
     }
 
+
+    private void slabBlockWithItem(DeferredBlock<SlabBlock> deferredBlock, DeferredBlock<Block> textureParent)
+    {
+        slabBlock(deferredBlock.get(), blockTexture(textureParent.get()),blockTexture(textureParent.get()));
+        blockItem(deferredBlock);
+    }
+
+    private void stairBlockWithItem(DeferredBlock<StairBlock> deferredBlock, DeferredBlock<Block> textureParent)
+    {
+        stairsBlock(deferredBlock.get(), blockTexture(textureParent.get()));
+        blockItem(deferredBlock);
+
+    }
 
 }

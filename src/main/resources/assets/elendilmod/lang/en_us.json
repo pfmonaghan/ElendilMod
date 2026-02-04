@@ -1,4 +1,7 @@
 {
   "block.elendilmod.osgiliath_rubble_1": "Osgiliath Rubble",
-  "block.elendilmod.osgiliath_arch_2": "Osgiliath Arch"
+  "block.elendilmod.osgiliath_arch_2": "Osgiliath Arch",
+  "block.elendilmod.osgiliath_pillar_1": "Osgiliath Pillar",
+  "creativetab.elendilmod.osgiliath": "Osgiliath",
+  "creativetab.elendilmod.dead_marshes": "The Dead Marshes"
 }

@@ -22,6 +22,19 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.OSGILIATH_RUBBLE_1.get());
         dropSelf(ModBlocks.OSGILIATH_RUBBLE_SLAB.get());
         dropSelf(ModBlocks.OSGILIATH_RUBBLE_STAIRS.get());
+
+        dropSelf(ModBlocks.OSGILIATH_STONE_1.get());
+        dropSelf(ModBlocks.OSGILIATH_STONE_1_SLAB.get());
+        dropSelf(ModBlocks.OSGILIATH_STONE_1_STAIRS.get());
+
+        dropSelf(ModBlocks.OSGILIATH_ROOF_TILE_1.get());
+        dropSelf(ModBlocks.OSGILIATH_ROOF_TILE_1_SLAB.get());
+        dropSelf(ModBlocks.OSGILIATH_ROOF_TILE_1_STAIRS.get());
+
+        dropSelf(ModBlocks.OSGILIATH_STONE_BRICK_1.get());
+        dropSelf(ModBlocks.OSGILIATH_STONE_BRICK_1_SLAB.get());
+        dropSelf(ModBlocks.OSGILIATH_STONE_BRICK_1_STAIRS.get());
+
         dropSelf(ModBlocks.OSGILIATH_ARCH_1.get());
         dropSelf(ModBlocks.OSGILIATH_ARCH_PANE.get());
         dropSelf(ModBlocks.OSGILIATH_ARCH_PANE_BOTTOM.get());
@@ -30,6 +43,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.DEAD_MARSHES_GRASS_1.get());
         dropSelf(ModBlocks.DEAD_MARSHES_GRASS_2.get());
         dropSelf(ModBlocks.OSGILIATH_QUARTER_DOME.get());
+        dropSelf(ModBlocks.OSGILIATH_PILLAR_1.get());
+        dropSelf(ModBlocks.AMON_HEN_STATUE_EAGLE.get());
+        dropSelf(ModBlocks.OSGILIATH_DOME_9x9.get());
+
     }
 
     @Override

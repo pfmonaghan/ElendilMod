@@ -1,6 +1,7 @@
 package com.monkeyham.elendilmod;
 
 import com.monkeyham.elendilmod.block.ModBlocks;
+import com.monkeyham.elendilmod.item.ModCreativeTabs;
 import com.monkeyham.elendilmod.item.ModItems;
 import org.slf4j.Logger;
 
@@ -61,6 +62,7 @@ public class ElendilMod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModCreativeTabs.register(modEventBus);
 
     }
 
@@ -91,6 +93,24 @@ public class ElendilMod {
             event.accept(ModBlocks.DEAD_MARSHES_GRASS_1);
             event.accept(ModBlocks.DEAD_MARSHES_GRASS_2);
             event.accept(ModBlocks.OSGILIATH_QUARTER_DOME);
+
+            event.accept(ModBlocks.OSGILIATH_STONE_1);
+            event.accept(ModBlocks.OSGILIATH_STONE_1_SLAB);
+            event.accept(ModBlocks.OSGILIATH_STONE_1_STAIRS);
+
+            event.accept(ModBlocks.OSGILIATH_ROOF_TILE_1);
+            event.accept(ModBlocks.OSGILIATH_ROOF_TILE_1_SLAB);
+            event.accept(ModBlocks.OSGILIATH_ROOF_TILE_1_STAIRS);
+
+            event.accept(ModBlocks.OSGILIATH_STONE_BRICK_1);
+            event.accept(ModBlocks.OSGILIATH_STONE_BRICK_1_SLAB);
+            event.accept(ModBlocks.OSGILIATH_STONE_BRICK_1_STAIRS);
+            event.accept(ModBlocks.OSGILIATH_PILLAR_1);
+            event.accept(ModBlocks.AMON_HEN_STATUE_EAGLE);
+            event.accept(ModBlocks.OSGILIATH_DOME_9x9);
+
+
+
         }
     }
 

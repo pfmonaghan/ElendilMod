@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=north": {
+			"model": "elendilmod:block/osgiliath_pillar_1"
+		},
+		"facing=south": {
+			"model": "elendilmod:block/osgiliath_pillar_1",
+			"y": 180
+		},
+		"facing=east": {
+			"model": "elendilmod:block/osgiliath_pillar_1",
+			"y": 90
+		},
+		"facing=west": {
+			"model": "elendilmod:block/osgiliath_pillar_1",
+			"y": 270
+		}
+	}
+}

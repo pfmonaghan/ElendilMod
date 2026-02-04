@@ -1,21 +1,16 @@
 {
   "loader": "neoforge:obj",
-  "model": "elendilmod:models/block/osgiliath_quarter_dome.obj",
+  "model": "elendilmod:models/block/amon_hen_statue_eagle.obj",
   "textures": {
-    "osgiliath_rubble_1": "elendilmod:block/osgiliath_rubble_1",
+    "amon_hen_statue_eagle": "elendilmod:block/amon_hen_statue_eagle",
     "particle": "minecraft:block/stone"
   },
   "display": {
     "gui": {
-      "rotation": [
-        30,
-        225,
-        0
-      ],
       "scale": [
-        0.7,
-        0.7,
-        0.7
+        0.25,
+        0.25,
+        0.25
       ]
     }
   },

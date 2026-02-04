@@ -7,6 +7,18 @@
     "elendilmod:osgiliath_arch_2",
     "elendilmod:osgiliath_arch_pane_bottom",
     "elendilmod:osgiliath_arch_pane",
-    "elendilmod:osgiliath_quarter_dome"
+    "elendilmod:osgiliath_pillar_1",
+    "elendilmod:osgiliath_stone_1",
+    "elendilmod:osgiliath_stone_1_slab",
+    "elendilmod:osgiliath_stone_1_stairs",
+    "elendilmod:osgiliath_roof_tile_1",
+    "elendilmod:osgiliath_roof_tile_1_slab",
+    "elendilmod:osgiliath_roof_tile_1_stairs",
+    "elendilmod:osgiliath_stone_brick_1",
+    "elendilmod:osgiliath_stone_brick_1_slab",
+    "elendilmod:osgiliath_stone_brick_1_stairs",
+    "elendilmod:osgiliath_quarter_dome",
+    "elendilmod:osgiliath_dome_9x9",
+    "elendilmod:amon_hen_statue_eagle"
   ]
 }

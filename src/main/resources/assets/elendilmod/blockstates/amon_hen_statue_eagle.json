@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=north": {
+			"model": "elendilmod:block/amon_hen_statue_eagle"
+		},
+		"facing=south": {
+			"model": "elendilmod:block/amon_hen_statue_eagle",
+			"y": 180
+		},
+		"facing=east": {
+			"model": "elendilmod:block/amon_hen_statue_eagle",
+			"y": 90
+		},
+		"facing=west": {
+			"model": "elendilmod:block/amon_hen_statue_eagle",
+			"y": 270
+		}
+	}
+}

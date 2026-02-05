@@ -1,6 +1,10 @@
 package com.monkeyham.elendilmod;
 
+import com.monkeyham.elendilmod.entity.ModEntities;
+import com.monkeyham.elendilmod.entity.client.GeckoRenderer;
+import com.monkeyham.elendilmod.entity.client.OrcInfantryRenderer;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -27,5 +31,8 @@ public class ElendilModClient {
         // Some client setup code
         ElendilMod.LOGGER.info("HELLO FROM CLIENT SETUP");
         ElendilMod.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+
+        EntityRenderers.register(ModEntities.GECKO.get(), GeckoRenderer::new);
+        EntityRenderers.register(ModEntities.ORC_INFANTRY.get(), OrcInfantryRenderer::new);
     }
 }

@@ -1,6 +1,7 @@
 package com.monkeyham.elendilmod;
 
 import com.monkeyham.elendilmod.block.ModBlocks;
+import com.monkeyham.elendilmod.entity.ModEntities;
 import com.monkeyham.elendilmod.item.ModCreativeTabs;
 import com.monkeyham.elendilmod.item.ModItems;
 import org.slf4j.Logger;
@@ -63,6 +64,7 @@ public class ElendilMod {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
+        ModEntities.register(modEventBus);
 
     }
 

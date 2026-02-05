@@ -1,2 +1,4 @@
-// 1.21.1	2026-02-04T22:53:31.0004204	Tags for minecraft:block mod id elendilmod
-0b12f3404acafb910ce5735f6c998be96a1190bd data/minecraft/tags/block/mineable/pickaxe.json
+// 1.21.1	2026-02-05T15:53:12.8982682	Tags for minecraft:block mod id elendilmod
+dd185e0684e673ba19994c48eab0c36a19efad9a data/minecraft/tags/block/mineable/axe.json
+14f66739000e5dc6fe7f00fd4da551790ff01f9a data/minecraft/tags/block/mineable/pickaxe.json
+e7e6594c8f4b0190d092ac72af270157d7fdd66a data/minecraft/tags/block/walls.json

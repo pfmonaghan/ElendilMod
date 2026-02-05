@@ -22,14 +22,17 @@ public class ModCreativeTabs {
                 output.accept(ModBlocks.OSGILIATH_STONE_1);
                 output.accept(ModBlocks.OSGILIATH_STONE_1_SLAB);
                 output.accept(ModBlocks.OSGILIATH_STONE_1_STAIRS);
+                output.accept(ModBlocks.OSGILIATH_STONE_1_WALL);
 
                 output.accept(ModBlocks.OSGILIATH_STONE_BRICK_1);
                 output.accept(ModBlocks.OSGILIATH_STONE_BRICK_1_SLAB);
                 output.accept(ModBlocks.OSGILIATH_STONE_BRICK_1_STAIRS);
+                output.accept(ModBlocks.OSGILIATH_STONE_BRICK_1_WALL);
 
                 output.accept(ModBlocks.OSGILIATH_RUBBLE_1);
                 output.accept(ModBlocks.OSGILIATH_RUBBLE_SLAB);
                 output.accept(ModBlocks.OSGILIATH_RUBBLE_STAIRS);
+                output.accept(ModBlocks.OSGILIATH_RUBBLE_WALL);
 
                 output.accept(ModBlocks.OSGILIATH_ROOF_TILE_1);
                 output.accept(ModBlocks.OSGILIATH_ROOF_TILE_1_SLAB);
@@ -43,6 +46,9 @@ public class ModCreativeTabs {
                 output.accept(ModBlocks.OSGILIATH_QUARTER_DOME);
                 output.accept(ModBlocks.OSGILIATH_DOME_9x9);
 
+                output.accept(ModBlocks.OSGILIATH_DOOR_1);
+
+
             })
 
             .build());
@@ -55,6 +61,8 @@ public class ModCreativeTabs {
                 output.accept(ModBlocks.DEAD_MARSHES_GRASS_1);
                 output.accept(ModBlocks.DEAD_MARSHES_GRASS_2);
                 output.accept(ModBlocks.DEAD_MARSHES_CORPSE_CANDLE);
+                output.accept(ModItems.GECKO_SPAWN_EGG);
+                output.accept(ModItems.ORC_INFANTRY_SPAWN_EGG);
 
             }).build());
 
@@ -63,7 +71,42 @@ public class ModCreativeTabs {
             .title(Component.translatable("creativetab.elendilmod.mordor"))
             .displayItems((itemDisplayParameters, output)->{
 
+            output.accept(ModBlocks.MORDOR_BLOCK_1);
+            output.accept(ModBlocks.MORDOR_BLOCK_1_SLAB);
+            output.accept(ModBlocks.MORDOR_BLOCK_1_STAIRS);
+            output.accept(ModBlocks.MORDOR_BLOCK_1_WALL);
 
+                output.accept(ModBlocks.MORDOR_BLOCK_2);
+                output.accept(ModBlocks.MORDOR_BLOCK_2_SLAB);
+                output.accept(ModBlocks.MORDOR_BLOCK_2_STAIRS);
+                output.accept(ModBlocks.MORDOR_BLOCK_2_WALL);
+
+
+                output.accept(ModBlocks.MORDOR_BLOCK_3);
+                output.accept(ModBlocks.MORDOR_BLOCK_3_SLAB);
+                output.accept(ModBlocks.MORDOR_BLOCK_3_STAIRS);
+                output.accept(ModBlocks.MORDOR_BLOCK_3_WALL);
+
+
+                output.accept(ModBlocks.MORDOR_BLOCK_4);
+                output.accept(ModBlocks.MORDOR_BLOCK_4_SLAB);
+                output.accept(ModBlocks.MORDOR_BLOCK_4_STAIRS);
+                output.accept(ModBlocks.MORDOR_BLOCK_4_WALL);
+
+
+                output.accept(ModBlocks.MORDOR_BLOCK_5);
+                output.accept(ModBlocks.MORDOR_BLOCK_5_SLAB);
+                output.accept(ModBlocks.MORDOR_BLOCK_5_STAIRS);
+                output.accept(ModBlocks.MORDOR_BLOCK_5_WALL);
+
+
+                output.accept(ModBlocks.MORDOR_BLOCK_6);
+                output.accept(ModBlocks.MORDOR_BLOCK_6_SLAB);
+                output.accept(ModBlocks.MORDOR_BLOCK_6_STAIRS);
+                output.accept(ModBlocks.MORDOR_BLOCK_6_WALL);
+
+                output.accept(ModBlocks.MORDOR_DOOR_1);
+            output.accept(ModBlocks.MORDOR_TRAPDOOR_1);
             }).build());
 
 

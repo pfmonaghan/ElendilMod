@@ -3,9 +3,11 @@ package com.monkeyham.elendilmod.event;
 import com.monkeyham.elendilmod.ElendilMod;
 import com.monkeyham.elendilmod.entity.ModEntities;
 import com.monkeyham.elendilmod.entity.client.GeckoModel;
+import com.monkeyham.elendilmod.entity.client.OrcArmorModel;
 import com.monkeyham.elendilmod.entity.client.OrcInfantryModel;
 import com.monkeyham.elendilmod.entity.custom.GeckoEntity;
 import com.monkeyham.elendilmod.entity.custom.OrcInfantryEntity;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
@@ -19,6 +21,10 @@ public class ModEventBusEvents {
     {
         event.registerLayerDefinition(GeckoModel.LAYER_LOCATION, GeckoModel::createBodyLayer);
         event.registerLayerDefinition(OrcInfantryModel.LAYER_LOCATION, OrcInfantryModel::createBodyLayer);
+
+
+        //event.registerLayerDefinition(OrcArmorModel.ORC_ARMOR_OUTER_LAYER_LOCATION, OrcArmorModel::createOuterArmorLayer);
+        //event.registerLayerDefinition(OrcArmorModel.ORC_ARMOR_INNER_LAYER_LOCATION, OrcArmorModel::createInnerArmorLayer);
     }
 
     @SubscribeEvent

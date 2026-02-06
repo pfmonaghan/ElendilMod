@@ -21,7 +21,7 @@ public class ModEntities {
                     .build("gecko"));
     public static final Supplier<EntityType<OrcInfantryEntity>> ORC_INFANTRY =
             ENTITY_TYPES.register("orc_infantry", ()->EntityType.Builder
-                    .of(OrcInfantryEntity::new, MobCategory.MONSTER).sized(.75f, .75f)
+                    .of(OrcInfantryEntity::new, MobCategory.MONSTER).sized(.75f, .90f)
                     .build("orc_infantry"));
 
     public static void register(IEventBus eventBus)

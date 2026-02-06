@@ -62,7 +62,6 @@ public class ModCreativeTabs {
                 output.accept(ModBlocks.DEAD_MARSHES_GRASS_2);
                 output.accept(ModBlocks.DEAD_MARSHES_CORPSE_CANDLE);
                 output.accept(ModItems.GECKO_SPAWN_EGG);
-                output.accept(ModItems.ORC_INFANTRY_SPAWN_EGG);
 
             }).build());
 
@@ -107,6 +106,9 @@ public class ModCreativeTabs {
 
                 output.accept(ModBlocks.MORDOR_DOOR_1);
             output.accept(ModBlocks.MORDOR_TRAPDOOR_1);
+
+            output.accept(ModItems.MORDOR_FALCHION);
+            output.accept(ModItems.ORC_INFANTRY_SPAWN_EGG);
             }).build());
 
 

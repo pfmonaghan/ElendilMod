@@ -8,6 +8,8 @@ import net.minecraft.client.renderer.ItemInHandRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.client.renderer.entity.layers.CustomHeadLayer;
+import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
 import net.minecraft.client.renderer.entity.layers.ItemInHandLayer;
 import net.minecraft.resources.ResourceLocation;
 
@@ -15,6 +17,11 @@ public class OrcInfantryRenderer extends MobRenderer<OrcInfantryEntity, OrcInfan
 
     public OrcInfantryRenderer(EntityRendererProvider.Context context) {
         super(context, new OrcInfantryModel<>(context.bakeLayer(OrcInfantryModel.LAYER_LOCATION)), .25f);
+       /* this.addLayer(new HumanoidArmorLayer<>(this,
+                new OrcArmorModel<>(context.bakeLayer(OrcArmorModel.ORC_ARMOR_OUTER_LAYER_LOCATION)),
+                new OrcArmorModel<>(context.bakeLayer(OrcArmorModel.ORC_ARMOR_INNER_LAYER_LOCATION)),
+                context.getModelManager()
+        ));*/
         this.addLayer(
                 new ItemInHandLayer<OrcInfantryEntity, OrcInfantryModel<OrcInfantryEntity> >(this, context.getItemInHandRenderer())
                 {
@@ -27,6 +34,7 @@ public class OrcInfantryRenderer extends MobRenderer<OrcInfantryEntity, OrcInfan
                     }
                 }
         );
+
 
     }
 

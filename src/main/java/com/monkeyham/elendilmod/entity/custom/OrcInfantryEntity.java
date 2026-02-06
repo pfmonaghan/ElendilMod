@@ -2,11 +2,10 @@ package com.monkeyham.elendilmod.entity.custom;
 
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
-import net.minecraft.world.entity.AnimationState;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.EquipmentTable;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -22,7 +21,9 @@ import net.minecraft.world.entity.raid.Raider;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.storage.loot.LootParams;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Predicate;
 
@@ -73,10 +74,19 @@ public class OrcInfantryEntity extends AbstractIllager {
     }
 
 
+    @Override
+    public @Nullable SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty,
+                MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData) {
+        RandomSource randomSource = level.getRandom();
+
+        this.populateDefaultEquipmentSlots(randomSource, difficulty);
+        return super.finalizeSpawn(level, difficulty, spawnType, spawnGroupData);
+    }
 
     @Override
     public void applyRaidBuffs(ServerLevel serverLevel, int i, boolean b) {
         ItemStack itemstack = new ItemStack(Items.IRON_AXE);
+        this.setItemSlot(EquipmentSlot.MAINHAND, itemstack);
     }
 
     @Override
@@ -98,4 +108,25 @@ public class OrcInfantryEntity extends AbstractIllager {
     public void equip(EquipmentTable equipmentTable, LootParams params) {
         super.equip(equipmentTable, params);
     }
+
+    @Override
+    public IllagerArmPose getArmPose() {
+        if(this.isAggressive())
+        {
+            return IllagerArmPose.ATTACKING;
+        }
+        return super.getArmPose();
+    }
+
+
+
+    @Override
+    protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
+        this.setItemSlot(EquipmentSlot.BODY, new ItemStack(Items.IRON_CHESTPLATE));
+        this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_AXE));
+        this.handDropChances[EquipmentSlot.MAINHAND.getIndex()] = 25.0F;
+        super.populateDefaultEquipmentSlots(random, difficulty);
+    }
+
+
 }

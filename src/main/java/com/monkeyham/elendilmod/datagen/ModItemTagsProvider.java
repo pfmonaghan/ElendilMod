@@ -20,6 +20,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(ItemTags.SWORDS)
-                .add(ModItems.MORDOR_FALCHION.get());
+                .add(ModItems.MORDOR_FALCHION.get())
+                .add(ModItems.MORDOR_MACE.get())
+                .add(ModItems.MORDOR_HALBERD.get());
+        tag(ItemTags.AXES)
+                .add(ModItems.MORDOR_AXE.get());
     }
 }

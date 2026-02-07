@@ -38,6 +38,8 @@ public class OrcInfantryRenderer extends MobRenderer<OrcInfantryEntity, OrcInfan
 
     }
 
+
+
     @Override
     public ResourceLocation getTextureLocation(OrcInfantryEntity orcInfantryEntity) {
         return ResourceLocation.fromNamespaceAndPath(ElendilMod.MODID, "textures/entity/orc_infantry/orc_infantry.png");

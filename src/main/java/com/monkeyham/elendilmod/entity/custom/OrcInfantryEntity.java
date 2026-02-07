@@ -17,7 +17,6 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.AbstractIllager;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.Vindicator;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.raid.Raider;
@@ -138,12 +137,27 @@ public class OrcInfantryEntity extends AbstractIllager {
         return super.getArmPose();
     }
 
-
+    @Override
+    protected void playAttackSound() {
+        this.playSound(ModSoundEvents.ORC_SOUND_AMBIENT.get());
+    }
 
     @Override
     protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
+
+        int mainItemInt = random.nextInt(100);
+        if(mainItemInt<49){
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.MORDOR_FALCHION.get()));
+        }else if(mainItemInt>49 && mainItemInt<74 ){
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.MORDOR_AXE.get()));
+        }else {
+
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.MORDOR_MACE.get()));
+        }
+
+
         this.setItemSlot(EquipmentSlot.BODY, new ItemStack(Items.IRON_CHESTPLATE));
-        this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.MORDOR_FALCHION.get()));
+        //this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.MORDOR_FALCHION.get()));
         this.handDropChances[EquipmentSlot.MAINHAND.getIndex()] = 10.0F;
         super.populateDefaultEquipmentSlots(random, difficulty);
     }

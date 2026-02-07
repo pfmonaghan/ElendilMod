@@ -109,9 +109,16 @@ public class OrcInfantryModel<T extends OrcInfantryEntity> extends HierarchicalM
     }
 
 
+
     @Override
     public void translateToHand(HumanoidArm humanoidArm, PoseStack poseStack) {
-        poseStack.translate(-.55,1.5,0);
+        float f = humanoidArm == HumanoidArm.RIGHT ? -.55F : 0.0F;
+        //ModelPart modelpart = this.getArm(humanoidArm);
+      //  modelpart.x += f;
+       // modelpart.translateAndRotate(poseStack);
+        //modelpart.x -= f;
+
+        poseStack.translate(f,1.5,0);
         this.getArm(humanoidArm).translateAndRotate(poseStack);
     }
 

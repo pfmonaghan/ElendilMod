@@ -88,6 +88,7 @@ public class OrcArcherModel<T extends OrcArcherEntity> extends HierarchicalModel
 
             AnimationUtils.animateCrossbowHold(this.ArmR, this.ArmL, this.Head, !entity.isLeftHanded());
 
+
         }
     }
 
@@ -112,11 +113,21 @@ public class OrcArcherModel<T extends OrcArcherEntity> extends HierarchicalModel
 
     @Override
     public void translateToHand(HumanoidArm humanoidArm, PoseStack poseStack) {
-        if(this.getArm(humanoidArm)==ArmR)
-        {
-            poseStack.translate(-.55,1.5,0);
-        }else{poseStack.translate(1.5,1.5,0);}
+
+        float f = humanoidArm == HumanoidArm.RIGHT ? -.55F : 0.0F;
+        //ModelPart modelpart = this.getArm(humanoidArm);
+        //  modelpart.x += f;
+        // modelpart.translateAndRotate(poseStack);
+        //modelpart.x -= f;
+
+        poseStack.translate(f,1.5,0);
         this.getArm(humanoidArm).translateAndRotate(poseStack);
+
+       // if(this.getArm(humanoidArm)==ArmR)
+     //   {
+        //    poseStack.translate(-.55,1.5,0);
+       // }else{poseStack.translate(1.5,1.5,0);}
+       // this.getArm(humanoidArm).translateAndRotate(poseStack);
     }
 
     //public static LayerDefinition createOuterArmorLayer()

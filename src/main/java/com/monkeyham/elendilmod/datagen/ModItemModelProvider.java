@@ -25,6 +25,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModBlocks.OSGILIATH_DOOR_1.asItem());
 
         handheldItem(ModItems.MORDOR_FALCHION);
+        handheldItem(ModItems.MORDOR_AXE);
+        handheldItem(ModItems.MORDOR_MACE);
+        handheldItem(ModItems.MORDOR_HALBERD);
+        handheldItem(ModItems.GONDOR_SHIELD);
 
         wallItem(ModBlocks.OSGILIATH_RUBBLE_WALL, ModBlocks.OSGILIATH_RUBBLE_1);
         wallItem(ModBlocks.OSGILIATH_STONE_1_WALL, ModBlocks.OSGILIATH_STONE_1);

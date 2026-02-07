@@ -51,8 +51,8 @@ public class OrcArcherEntity extends AbstractIllager implements RangedAttackMob 
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new BreakDoorGoal(this, DOOR_BREAKING_PREDICATE));
         this.goalSelector.addGoal(2, new RaiderOpenDoorGoal(this));
-        this.goalSelector.addGoal(3, new HoldGroundAttackGoal(this, 30.0F));
-        this.goalSelector.addGoal(4, new RangedBowAttackGoal(this, (double)1.0F, 20, 30.0F));
+        this.goalSelector.addGoal(3, new HoldGroundAttackGoal(this, 80.0F));
+        this.goalSelector.addGoal(4, new RangedBowAttackGoal(this, (double)1.0F, 20, 80.0F));
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, new Class[]{Raider.class})).setAlertOthers(new Class[0]));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Player.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, AbstractVillager.class, true));
@@ -131,6 +131,8 @@ public class OrcArcherEntity extends AbstractIllager implements RangedAttackMob 
         this.playSound(ModSoundEvents.SHOOT_BOW.get(), 1.0F, 1.0F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
         this.level().addFreshEntity(abstractarrow);
     }
+
+
 
     protected AbstractArrow getArrow(ItemStack arrow, float velocity, @javax.annotation.Nullable ItemStack weapon) {
         return ProjectileUtil.getMobArrow(this, arrow, velocity, weapon);

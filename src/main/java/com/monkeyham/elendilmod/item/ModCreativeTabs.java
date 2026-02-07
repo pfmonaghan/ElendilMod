@@ -47,6 +47,7 @@ public class ModCreativeTabs {
                 output.accept(ModBlocks.OSGILIATH_DOME_9x9);
 
                 output.accept(ModBlocks.OSGILIATH_DOOR_1);
+                output.accept(ModItems.GONDOR_SHIELD);
 
 
             })
@@ -108,6 +109,9 @@ public class ModCreativeTabs {
             output.accept(ModBlocks.MORDOR_TRAPDOOR_1);
 
             output.accept(ModItems.MORDOR_FALCHION);
+            output.accept(ModItems.MORDOR_AXE);
+            output.accept(ModItems.MORDOR_MACE);
+            output.accept(ModItems.MORDOR_HALBERD);
             output.accept(ModItems.ORC_INFANTRY_SPAWN_EGG);
             output.accept(ModItems.ORC_ARCHER_SPAWN_EGG);
             }).build());

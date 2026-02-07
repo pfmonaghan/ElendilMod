@@ -15,12 +15,21 @@ public class ModSoundDefinitionProvider extends SoundDefinitionsProvider {
     @Override
     public void registerSounds() {
         this.add(ModSoundEvents.ORC_SOUND_AMBIENT.get(), SoundDefinition.definition().
-                with(sound("mob/orc/orc_ambient_1")).
-                with(sound("mob/orc/orc_ambient_2")));
+                with(sound("elendilmod:mob/orc/orc_ambient_1"), sound("elendilmod:mob/orc/orc_ambient_2"),
+                sound("elendilmod:mob/orc/orc_ambient_3"), sound("elendilmod:mob/orc/orc_ambient_4"),
+                        sound("elendilmod:mob/orc/orc_ambient_5"), sound("elendilmod:mob/orc/orc_ambient_6"),
+                        sound("elendilmod:mob/orc/orc_ambient_7"), sound("elendilmod:mob/orc/orc_ambient_8")));
+
         this.add(ModSoundEvents.ORC_SOUND_DEATH.get(), SoundDefinition.definition().
-                with(sound("mob/orc/orc_death_1")));
+                with(sound("elendilmod:mob/orc/orc_death_1"),sound("elendilmod:mob/orc/orc_death_2"),
+                        sound("elendilmod:mob/orc/orc_death_3"),sound("elendilmod:mob/orc/orc_death_4"),
+                        sound("elendilmod:mob/orc/orc_death_5")))
+        ;
         this.add(ModSoundEvents.ORC_SOUND_HURT.get(), SoundDefinition.definition().
-                with(sound("mob/orc/orc_hurt_1")));
+                with(sound("elendilmod:mob/orc/orc_hurt_1"),sound("elendilmod:mob/orc/orc_hurt_2"),
+                        sound("elendilmod:mob/orc/orc_hurt_3"),sound("elendilmod:mob/orc/orc_hurt_4"),
+                        sound("elendilmod:mob/orc/orc_hurt_5")))
+        ;
 
     }
 }

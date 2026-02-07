@@ -1,11 +1,13 @@
 package com.monkeyham.elendilmod.entity.custom;
 
 import com.monkeyham.elendilmod.item.ModItems;
+import com.monkeyham.elendilmod.sound.ModSoundEvents;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -59,6 +61,23 @@ public class OrcInfantryEntity extends AbstractIllager {
                 .add(Attributes.MAX_HEALTH, 24.0)
                 .add(Attributes.ATTACK_DAMAGE, 5.0);
     }
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return ModSoundEvents.ORC_SOUND_AMBIENT.get();
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return ModSoundEvents.ORC_SOUND_DEATH.get();
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource damageSource) {
+        return ModSoundEvents.ORC_SOUND_HURT.get();
+    }
+
+
 
     private void setupAnimationStates() {
         if(this.idleAnimationTimeout <= 0) {

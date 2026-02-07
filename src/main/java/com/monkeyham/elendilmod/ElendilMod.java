@@ -4,6 +4,7 @@ import com.monkeyham.elendilmod.block.ModBlocks;
 import com.monkeyham.elendilmod.entity.ModEntities;
 import com.monkeyham.elendilmod.item.ModCreativeTabs;
 import com.monkeyham.elendilmod.item.ModItems;
+import com.monkeyham.elendilmod.sound.ModSoundEvents;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -65,7 +66,7 @@ public class ElendilMod {
         ModBlocks.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
         ModEntities.register(modEventBus);
-
+        ModSoundEvents.register(modEventBus);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {

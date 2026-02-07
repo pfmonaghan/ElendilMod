@@ -15,6 +15,7 @@ public class ModSoundEvents {
     public static final Supplier<SoundEvent> ORC_SOUND_AMBIENT = registerSoundEvent("orc_sound_ambient");
     public static final Supplier<SoundEvent> ORC_SOUND_DEATH = registerSoundEvent("orc_sound_death");
     public static final Supplier<SoundEvent> ORC_SOUND_HURT = registerSoundEvent("orc_sound_hurt");
+    public static final Supplier<SoundEvent> SHOOT_BOW = registerSoundEvent("shoot_bow");
 
     private static Supplier<SoundEvent> registerSoundEvent(String name)
     {

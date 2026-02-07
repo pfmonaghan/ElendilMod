@@ -2,6 +2,7 @@ package com.monkeyham.elendilmod.entity;
 
 import com.monkeyham.elendilmod.ElendilMod;
 import com.monkeyham.elendilmod.entity.custom.GeckoEntity;
+import com.monkeyham.elendilmod.entity.custom.OrcArcherEntity;
 import com.monkeyham.elendilmod.entity.custom.OrcInfantryEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
@@ -23,6 +24,10 @@ public class ModEntities {
             ENTITY_TYPES.register("orc_infantry", ()->EntityType.Builder
                     .of(OrcInfantryEntity::new, MobCategory.MONSTER).sized(.75f, 1.0f)
                     .build("orc_infantry"));
+    public static final Supplier<EntityType<OrcArcherEntity>> ORC_ARCHER =
+            ENTITY_TYPES.register("orc_archer", ()->EntityType.Builder
+                    .of(OrcArcherEntity::new, MobCategory.MONSTER).sized(.75f, 1.0f)
+                    .build("orc_archer"));
 
     public static void register(IEventBus eventBus)
     {

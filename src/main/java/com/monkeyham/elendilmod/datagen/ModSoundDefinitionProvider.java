@@ -30,6 +30,11 @@ public class ModSoundDefinitionProvider extends SoundDefinitionsProvider {
                         sound("elendilmod:mob/orc/orc_hurt_3"),sound("elendilmod:mob/orc/orc_hurt_4"),
                         sound("elendilmod:mob/orc/orc_hurt_5")))
         ;
+        this.add(ModSoundEvents.SHOOT_BOW.get(), SoundDefinition.definition().with(
+                sound("elendilmod:item/bow/bow_shoot_1"),
+                sound("elendilmod:item/bow/bow_shoot_2"),
+                sound("elendilmod:item/bow/bow_shoot_3"),
+                sound("elendilmod:item/bow/bow_shoot_4")));
 
     }
 }

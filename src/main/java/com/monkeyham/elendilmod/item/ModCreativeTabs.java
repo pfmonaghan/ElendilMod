@@ -109,6 +109,7 @@ public class ModCreativeTabs {
 
             output.accept(ModItems.MORDOR_FALCHION);
             output.accept(ModItems.ORC_INFANTRY_SPAWN_EGG);
+            output.accept(ModItems.ORC_ARCHER_SPAWN_EGG);
             }).build());
 
 

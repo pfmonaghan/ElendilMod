@@ -3,9 +3,11 @@ package com.monkeyham.elendilmod.event;
 import com.monkeyham.elendilmod.ElendilMod;
 import com.monkeyham.elendilmod.entity.ModEntities;
 import com.monkeyham.elendilmod.entity.client.GeckoModel;
+import com.monkeyham.elendilmod.entity.client.OrcArcherModel;
 import com.monkeyham.elendilmod.entity.client.OrcArmorModel;
 import com.monkeyham.elendilmod.entity.client.OrcInfantryModel;
 import com.monkeyham.elendilmod.entity.custom.GeckoEntity;
+import com.monkeyham.elendilmod.entity.custom.OrcArcherEntity;
 import com.monkeyham.elendilmod.entity.custom.OrcInfantryEntity;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -21,6 +23,7 @@ public class ModEventBusEvents {
     {
         event.registerLayerDefinition(GeckoModel.LAYER_LOCATION, GeckoModel::createBodyLayer);
         event.registerLayerDefinition(OrcInfantryModel.LAYER_LOCATION, OrcInfantryModel::createBodyLayer);
+        event.registerLayerDefinition(OrcArcherModel.LAYER_LOCATION, OrcArcherModel::createBodyLayer);
 
 
         //event.registerLayerDefinition(OrcArmorModel.ORC_ARMOR_OUTER_LAYER_LOCATION, OrcArmorModel::createOuterArmorLayer);
@@ -32,6 +35,7 @@ public class ModEventBusEvents {
     {
         event.put(ModEntities.GECKO.get(), GeckoEntity.createAttributes().build());
         event.put(ModEntities.ORC_INFANTRY.get(), OrcInfantryEntity.createAttributes().build());
+        event.put(ModEntities.ORC_ARCHER.get(), OrcArcherEntity.createAttributes().build());
     }
 
 }

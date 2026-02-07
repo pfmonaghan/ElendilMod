@@ -144,7 +144,7 @@ public class OrcInfantryEntity extends AbstractIllager {
     protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
         this.setItemSlot(EquipmentSlot.BODY, new ItemStack(Items.IRON_CHESTPLATE));
         this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.MORDOR_FALCHION.get()));
-        this.handDropChances[EquipmentSlot.MAINHAND.getIndex()] = 25.0F;
+        this.handDropChances[EquipmentSlot.MAINHAND.getIndex()] = 10.0F;
         super.populateDefaultEquipmentSlots(random, difficulty);
     }
 

@@ -2,6 +2,7 @@ package com.monkeyham.elendilmod;
 
 import com.monkeyham.elendilmod.entity.ModEntities;
 import com.monkeyham.elendilmod.entity.client.GeckoRenderer;
+import com.monkeyham.elendilmod.entity.client.OrcArcherRenderer;
 import com.monkeyham.elendilmod.entity.client.OrcInfantryRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -34,5 +35,6 @@ public class ElendilModClient {
 
         EntityRenderers.register(ModEntities.GECKO.get(), GeckoRenderer::new);
         EntityRenderers.register(ModEntities.ORC_INFANTRY.get(), OrcInfantryRenderer::new);
+        EntityRenderers.register(ModEntities.ORC_ARCHER.get(), OrcArcherRenderer::new);
     }
 }

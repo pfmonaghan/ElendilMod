@@ -48,6 +48,7 @@ public class ModCreativeTabs {
 
                 output.accept(ModBlocks.OSGILIATH_DOOR_1);
                 output.accept(ModItems.GONDOR_SHIELD);
+                output.accept(ModItems.GONDOR_INFANTRY_SPAWN_EGG);
 
 
             })

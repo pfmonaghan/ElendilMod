@@ -1,0 +1,19 @@
+{
+
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 13,
+    "separation": 5,
+    "salt":  1572296244
+  },
+  "structures": [
+    {
+      "structure": "elendilmod:structure_parent",
+      "weight": 1
+    },
+    {
+      "structure": "elendilmod:cirith_ungol_base",
+      "weight": 1
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 package com.monkeyham.elendilmod.entity.custom;
 
+import com.monkeyham.elendilmod.entity.goals.RefinedRangeAttackGoal;
 import com.monkeyham.elendilmod.item.ModItems;
 import com.monkeyham.elendilmod.sound.ModSoundEvents;
 import net.minecraft.server.level.ServerLevel;
@@ -51,8 +52,8 @@ public class OrcArcherEntity extends AbstractIllager implements RangedAttackMob 
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new BreakDoorGoal(this, DOOR_BREAKING_PREDICATE));
         this.goalSelector.addGoal(2, new RaiderOpenDoorGoal(this));
-        this.goalSelector.addGoal(3, new HoldGroundAttackGoal(this, 80.0F));
-        this.goalSelector.addGoal(4, new RangedBowAttackGoal(this, (double)1.0F, 20, 80.0F));
+        this.goalSelector.addGoal(3, new HoldGroundAttackGoal(this, 200.0F));
+        this.goalSelector.addGoal(4, new RefinedRangeAttackGoal(this, (double)1.0F, 20, 400.0F));
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, new Class[]{Raider.class})).setAlertOthers(new Class[0]));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Player.class, true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, AbstractVillager.class, true));

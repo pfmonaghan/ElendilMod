@@ -114,7 +114,7 @@ public class OrcArcherModel<T extends OrcArcherEntity> extends HierarchicalModel
     @Override
     public void translateToHand(HumanoidArm humanoidArm, PoseStack poseStack) {
 
-        float f = humanoidArm == HumanoidArm.RIGHT ? -.55F : 0.0F;
+        float f = humanoidArm == HumanoidArm.RIGHT ? -.55F : .55F;
         //ModelPart modelpart = this.getArm(humanoidArm);
         //  modelpart.x += f;
         // modelpart.translateAndRotate(poseStack);

@@ -2,6 +2,7 @@ package com.monkeyham.elendilmod.entity;
 
 import com.monkeyham.elendilmod.ElendilMod;
 import com.monkeyham.elendilmod.entity.custom.GeckoEntity;
+import com.monkeyham.elendilmod.entity.custom.GondorInfantry;
 import com.monkeyham.elendilmod.entity.custom.OrcArcherEntity;
 import com.monkeyham.elendilmod.entity.custom.OrcInfantryEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -22,12 +23,17 @@ public class ModEntities {
                     .build("gecko"));
     public static final Supplier<EntityType<OrcInfantryEntity>> ORC_INFANTRY =
             ENTITY_TYPES.register("orc_infantry", ()->EntityType.Builder
-                    .of(OrcInfantryEntity::new, MobCategory.MONSTER).sized(.75f, 1.0f)
+                    .of(OrcInfantryEntity::new, MobCategory.MONSTER).sized(.75f, 1.85f)
                     .build("orc_infantry"));
     public static final Supplier<EntityType<OrcArcherEntity>> ORC_ARCHER =
             ENTITY_TYPES.register("orc_archer", ()->EntityType.Builder
-                    .of(OrcArcherEntity::new, MobCategory.MONSTER).sized(.75f, 1.0f)
+                    .of(OrcArcherEntity::new, MobCategory.MONSTER).sized(.75f, 1.85f)
                     .build("orc_archer"));
+
+    public static final Supplier<EntityType<GondorInfantry>> GONDOR_INFANTRY =
+            ENTITY_TYPES.register("gondor_infantry", ()->EntityType.Builder
+                    .of(GondorInfantry::new, MobCategory.MISC).sized(.75f, 1.85f)
+                    .build("gondor_infantry"));
 
     public static void register(IEventBus eventBus)
     {

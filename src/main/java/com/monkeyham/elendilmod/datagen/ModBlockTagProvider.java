@@ -86,5 +86,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.MORDOR_BLOCK_4_WALL.get())
                 .add(ModBlocks.MORDOR_BLOCK_5_WALL.get())
                 .add(ModBlocks.MORDOR_BLOCK_6_WALL.get());
+        tag(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.ITHILIEN_TREE_LOG.get())
+                .add(ModBlocks.ITHILIEN_TREE_WOOD.get())
+                .add(ModBlocks.STRIPPED_ITHILIEN_TREE_LOG.get())
+                .add(ModBlocks.STRIPPED_ITHILIEN_TREE_WOOD.get());
     }
 }

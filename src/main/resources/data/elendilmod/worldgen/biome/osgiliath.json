@@ -73,7 +73,8 @@
         ],
         [
             "minecraft:patch_tall_grass_2",
-            "minecraft:patch_grass_plain"
+            "minecraft:patch_grass_plain",
+            "elendilmod:ithilien_tree_placed"
         ],
         []
     ],

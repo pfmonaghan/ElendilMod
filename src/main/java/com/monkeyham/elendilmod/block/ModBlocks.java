@@ -3,16 +3,22 @@ package com.monkeyham.elendilmod.block;
 import com.monkeyham.elendilmod.ElendilMod;
 import com.monkeyham.elendilmod.block.custom.*;
 import com.monkeyham.elendilmod.item.ModItems;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
+
+import static com.monkeyham.elendilmod.worldgen.tree.ModTreeGrowers.ITHILIEN_TREE;
 
 public class ModBlocks {
 
@@ -141,6 +147,55 @@ public static final DeferredBlock<Block> OSGILIATH_ARCH_PANE = registerBlock("os
             ()->new Block(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.GRASS).noOcclusion().noCollission()));
     public static final DeferredBlock<Block> DEAD_MARSHES_CORPSE_CANDLE = registerBlock("dead_marshes_corpse_candle",
             ()->new Block(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SOUL_SAND).noOcclusion().noCollission().noLootTable()));
+
+
+    public static final DeferredBlock<Block> ITHILIEN_TREE_LOG = registerBlock("ithilien_tree_log",
+            ()->new ModFlammableRotatedBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
+    public static final DeferredBlock<Block> ITHILIEN_TREE_WOOD = registerBlock("ithilien_tree_wood",
+            ()->new ModFlammableRotatedBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
+    public static final DeferredBlock<Block> STRIPPED_ITHILIEN_TREE_LOG = registerBlock("stripped_ithilien_tree_log",
+            ()->new ModFlammableRotatedBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
+    public static final DeferredBlock<Block> STRIPPED_ITHILIEN_TREE_WOOD = registerBlock("stripped_ithilien_tree_wood",
+            ()->new ModFlammableRotatedBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final DeferredBlock<Block> ITHILIEN_TREE_PLANKS = registerBlock("ithilien_tree_planks",
+            ()->new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)){
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+            });
+    public static final DeferredBlock<Block> ITHILIEN_TREE_LEAVES = registerBlock("ithilien_tree_leaves",
+            ()->new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)){
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+            });
+
+
+    public static final DeferredBlock<Block> ITHILIEN_TREE_SAPLING = registerBlock("ithilien_tree_sapling",
+            ()->new SaplingBlock( ITHILIEN_TREE,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block)
     {

@@ -2,9 +2,11 @@ package com.monkeyham.elendilmod.datagen;
 
 import com.monkeyham.elendilmod.ElendilMod;
 import com.monkeyham.elendilmod.block.ModBlocks;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
@@ -96,6 +98,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.DEAD_MARSHES_GRASS_2.get(), models().cross("dead_marshes_grass_2", modLoc("block/dead_marshes_grass_2")).renderType("cutout"));
         simpleBlockWithItem(ModBlocks.DEAD_MARSHES_CORPSE_CANDLE.get(), models().cross("dead_marshes_corpse_candle", modLoc("block/dead_marshes_corpse_candle")).renderType("cutout"));
 
+        logBlock((RotatedPillarBlock) ModBlocks.ITHILIEN_TREE_LOG.get());
+        logBlock((RotatedPillarBlock) ModBlocks.STRIPPED_ITHILIEN_TREE_LOG.get());
+        axisBlock((RotatedPillarBlock) ModBlocks.ITHILIEN_TREE_WOOD.get(), blockTexture(ModBlocks.ITHILIEN_TREE_LOG.get()), blockTexture(ModBlocks.ITHILIEN_TREE_LOG.get()));
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_ITHILIEN_TREE_WOOD.get(), blockTexture(ModBlocks.STRIPPED_ITHILIEN_TREE_LOG.get()), blockTexture(ModBlocks.STRIPPED_ITHILIEN_TREE_LOG.get()));
+
+        blockItem(ModBlocks.ITHILIEN_TREE_LOG);
+        blockItem(ModBlocks.ITHILIEN_TREE_WOOD);
+        blockItem(ModBlocks.STRIPPED_ITHILIEN_TREE_LOG);
+        blockItem(ModBlocks.STRIPPED_ITHILIEN_TREE_WOOD);
+        blockWithItem(ModBlocks.ITHILIEN_TREE_PLANKS);
+
+        leavesBlock(ModBlocks.ITHILIEN_TREE_LEAVES);
+        saplingBlock(ModBlocks.ITHILIEN_TREE_SAPLING);
 
     }
 
@@ -137,6 +152,17 @@ public class ModBlockStateProvider extends BlockStateProvider {
         stairsBlock(deferredBlock.get(), blockTexture(textureParent.get()));
         blockItem(deferredBlock);
 
+    }
+
+    private void saplingBlock(DeferredBlock<Block> blockRegistryObject) {
+        simpleBlock(blockRegistryObject.get(),
+                models().cross(BuiltInRegistries.BLOCK.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+
+    private void leavesBlock(DeferredBlock<Block> blockRegistryObject) {
+        simpleBlockWithItem(blockRegistryObject.get(),
+                models().singleTexture(BuiltInRegistries.BLOCK.getKey(blockRegistryObject.get()).getPath(), ResourceLocation.parse("minecraft:block/leaves"),
+                        "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
 
 }

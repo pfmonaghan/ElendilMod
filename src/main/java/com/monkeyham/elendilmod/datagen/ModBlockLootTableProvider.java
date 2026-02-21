@@ -85,6 +85,16 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.MORDOR_DOOR_1.get());
         dropSelf(ModBlocks.MORDOR_TRAPDOOR_1.get());
 
+        dropSelf(ModBlocks.ITHILIEN_TREE_LOG.get());
+        dropSelf(ModBlocks.ITHILIEN_TREE_WOOD.get());
+        dropSelf(ModBlocks.ITHILIEN_TREE_PLANKS.get());
+        dropSelf(ModBlocks.STRIPPED_ITHILIEN_TREE_LOG.get());
+        dropSelf(ModBlocks.STRIPPED_ITHILIEN_TREE_WOOD.get());
+        dropSelf(ModBlocks.ITHILIEN_TREE_SAPLING.get());
+
+        add(ModBlocks.ITHILIEN_TREE_LEAVES.get(),
+                block ->createLeavesDrops(block, ModBlocks.ITHILIEN_TREE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
     }
 
     @Override

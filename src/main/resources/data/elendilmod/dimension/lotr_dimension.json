@@ -2,71 +2,143 @@
     "type": "elendilmod:lotr",
     "generator": {
         "type": "minecraft:noise",
-        "settings": "minecraft:large_biomes",
+        "settings": "elendilmod:lotr",
         "biome_source": {
             "type": "minecraft:multi_noise",
             "biomes": [
                 {
                     "biome": "minecraft:jagged_peaks",
                     "parameters": {
-                        "continentalness": 0.5,
-                        "weirdness": 0.25,
+                        "temperature": [
+                            -1,
+                            -0.5
+                        ],
+                        "humidity": [
+                            0.2,
+                            0.5
+                        ],
+                        "continentalness": [
+                            0.4,
+                            0.7
+                        ],
+                        "erosion": [
+                            0,
+                            0.3
+                        ],
                         "depth": 0,
-                        "erosion": 0.1,
-                        "humidity": 0.5,
-                        "offset": 1,
-                        "temperature": -0.8
+                        "weirdness": [
+                            0.2,
+                            0.6
+                        ],
+                        "offset": 0
                     }
                 },
                 {
                     "biome": "minecraft:stony_peaks",
                     "parameters": {
-                        "continentalness": 0.45,
+                        "temperature": [
+                            -0.6,
+                            -0.2
+                        ],
+                        "humidity": [
+                            0.1,
+                            0.4
+                        ],
+                        "continentalness": [
+                            0.35,
+                            0.65
+                        ],
+                        "erosion": [
+                            0.1,
+                            0.4
+                        ],
                         "depth": 0,
-                        "erosion": 0.2,
-                        "humidity": 0,
-                        "offset": 1,
-                        "temperature": -0.3,
-                        "weirdness": 0
+                        "weirdness": [
+                            -0.3,
+                            0.1
+                        ],
+                        "offset": 0
                     }
                 },
                 {
                     "biome": "elendilmod:osgiliath",
                     "parameters": {
+                        "temperature": [
+                            -0.5,
+                            0.5
+                        ],
+                        "humidity": [
+                            0.1,
+                            0.4
+                        ],
                         "continentalness": [
-                            0.35,
-                            0.75
+                            0.2,
+                            0.6
+                        ],
+                        "erosion": [
+                            0.4,
+                            1
                         ],
                         "depth": 0,
-                        "erosion": 1,
-                        "humidity": 0,
-                        "offset": 0.15,
-                        "temperature": 0.8,
-                        "weirdness": 0
+                        "weirdness": [
+                            -0.2,
+                            0.3
+                        ],
+                        "offset": 0
                     }
                 },
                 {
                     "biome": "elendilmod:dead_marshes",
                     "parameters": {
-                        "continentalness": 0.95,
+                        "temperature": [
+                            -0.6,
+                            0.6
+                        ],
+                        "humidity": [
+                            -0.4,
+                            0.4
+                        ],
+                        "continentalness": [
+                            0.1,
+                            1
+                        ],
+                        "erosion": [
+                            0.9,
+                            1
+                        ],
                         "depth": 0,
-                        "erosion": 0.6,
-                        "humidity": 0.8,
-                        "offset": 0.5,
-                        "temperature": 0.5,
-                        "weirdness": 0
+                        "weirdness": [
+                            -0.3,
+                            0.1
+                        ],
+                        "offset": 0
                     }
                 },
                 {
                     "biome": "elendilmod:mordor",
                     "parameters": {
-                        "continentalness": 0.9,
-                        "erosion": 0.4,
-                        "humidity": 0.8,
+                        "temperature": [
+                            0.6,
+                            2
+                        ],
+                        "humidity": [
+                            -0.5,
+                            0.5
+                        ],
+                        "continentalness": [
+                            0.33,
+                            2
+                        ],
+                        "erosion": [
+                            0.2,
+                            1
+                        ],
                         "depth": 0,
-                        "offset": 0.45,
-                        "temperature": 0.5,
-                        "weirdness": 0
+                        "weirdness": [
+                            0,
+                            2
+                        ],
+                        "offset": 0
                     }
                 }
             ]

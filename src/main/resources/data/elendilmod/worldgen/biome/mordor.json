@@ -35,9 +35,9 @@
         "particle":
         {
         "options" : {
-          "type": "minecraft:end_rod"
+          "type": "minecraft:smoke"
         },
-        "probability": 0.002
+        "probability": 0.0001
         }
 
     },

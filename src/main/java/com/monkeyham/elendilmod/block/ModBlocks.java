@@ -145,8 +145,8 @@ public static final DeferredBlock<Block> OSGILIATH_ARCH_PANE = registerBlock("os
             ()->new Block(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.GRASS).noOcclusion().noCollission()));
     public static final DeferredBlock<Block> DEAD_MARSHES_GRASS_2 = registerBlock("dead_marshes_grass_2",
             ()->new Block(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.GRASS).noOcclusion().noCollission()));
-    public static final DeferredBlock<Block> DEAD_MARSHES_CORPSE_CANDLE = registerBlock("dead_marshes_corpse_candle",
-            ()->new Block(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SOUL_SAND).noOcclusion().noCollission().noLootTable()));
+    public static final DeferredBlock<WaterlilyBlock> DEAD_MARSHES_CORPSE_CANDLE = registerBlock("dead_marshes_corpse_candle",
+            ()->new WaterlilyBlock(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SOUL_SAND).noOcclusion().noCollission().noLootTable()));
 
 
     public static final DeferredBlock<Block> ITHILIEN_TREE_LOG = registerBlock("ithilien_tree_log",

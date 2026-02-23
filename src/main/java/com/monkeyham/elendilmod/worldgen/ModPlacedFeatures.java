@@ -11,8 +11,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
@@ -34,8 +33,8 @@ public class ModPlacedFeatures {
                 VegetationPlacements.worldSurfaceSquaredWithCount(5));
         register(context, DEAD_MARSHES_CORPSE_CANDLE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DEAD_MARSHES_CORPSE_CANDLES_KEY),
                 VegetationPlacements.worldSurfaceSquaredWithCount(5));
-//        register(context, DIAMOND_BLOCK_FEATURE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DEAD_MARSHES_CORPSE_CANDLES_KEY),
-//                VegetationPlacements.worldSurfaceSquaredWithCount(5));
+        register(context, DIAMOND_BLOCK_FEATURE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DIAMOND_BLOCK_FEATURE_KEY),
+                VegetationPlacements.worldSurfaceSquaredWithCount(5));
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {
@@ -45,6 +44,11 @@ public class ModPlacedFeatures {
     private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,
                                  List<PlacementModifier> modifiers) {
         context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
+    }
+
+    private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,
+                                 PlacementModifier... modifiers) {
+        context.register(key, new PlacedFeature(configuration, List.of(modifiers)));
     }
 
 }

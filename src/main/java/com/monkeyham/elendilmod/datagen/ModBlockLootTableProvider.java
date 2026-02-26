@@ -45,6 +45,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.MORDOR_MERLON.get());
         dropSelf(ModBlocks.DEAD_MARSHES_GRASS_1.get());
         dropSelf(ModBlocks.DEAD_MARSHES_GRASS_2.get());
+
         dropSelf(ModBlocks.OSGILIATH_QUARTER_DOME.get());
         dropSelf(ModBlocks.OSGILIATH_PILLAR_1.get());
         dropSelf(ModBlocks.AMON_HEN_STATUE_EAGLE.get());
@@ -94,6 +95,11 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
         add(ModBlocks.ITHILIEN_TREE_LEAVES.get(),
                 block ->createLeavesDrops(block, ModBlocks.ITHILIEN_TREE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        dropSelf(ModBlocks.SHUYAO_GRASS.get());
+        dropSelf(ModBlocks.SHUYAO_STONE.get());
+        dropSelf(ModBlocks.SHUYAO_STONE_OLD.get());
+
 
     }
 

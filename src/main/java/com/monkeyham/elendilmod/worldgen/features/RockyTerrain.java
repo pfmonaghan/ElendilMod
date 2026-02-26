@@ -17,8 +17,11 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.NoOpFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
+import net.minecraft.world.level.levelgen.synth.PerlinNoise;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.Random;
 
 public class RockyTerrain extends Feature<NoneFeatureConfiguration> {
 
@@ -39,26 +42,28 @@ public class RockyTerrain extends Feature<NoneFeatureConfiguration> {
             blockpos = blockpos.below()) {
         }
 
+        int treeHeight = 10;//random.nextInt(7, 10);
+
      if (!IS_STONE.test(world.getBlockState(blockpos)))
      {
          return false;
      }
      else {
-         int height = random.nextInt(3, 7);
-         int width_x = random.nextInt(3, 5);
-         int width_z = random.nextInt(3, 5);
+         this.setBlock(world, blockpos, Blocks.SPRUCE_LOG.defaultBlockState());
 
-         for (int i = 0; i < height; ++i) {
-             this.setBlock(world, blockpos.above(i), Blocks.DIAMOND_BLOCK.defaultBlockState());
+         BlockPos start = blockpos.above(treeHeight);
+
+         this.setBlock(world, start, Blocks.SPRUCE_LEAVES.defaultBlockState());
+         this.setBlock(world, start.above(1), Blocks.SPRUCE_LEAVES.defaultBlockState());
+
+         for(int i =0;i<10;++i)
+         {
+             this.setBlock(world, start.below(i), Blocks.SPRUCE_LOG.defaultBlockState());
          }
-         for (int i = 0; i < width_x; ++i) {
-             this.setBlock(world, blockpos.west(i), Blocks.DIAMOND_BLOCK.defaultBlockState());
-             this.setBlock(world, blockpos.east(i), Blocks.DIAMOND_BLOCK.defaultBlockState());
-         }
-         for (int i = 0; i < (width_z); ++i) {
-             this.setBlock(world, blockpos.north(i), Blocks.DIAMOND_BLOCK.defaultBlockState());
-             this.setBlock(world, blockpos.south(i), Blocks.DIAMOND_BLOCK.defaultBlockState());
-         }
+
+         createLayer(3,start.below(1), world);
+         createLayer(5,start.below(3), world);
+         createLayer(7,start.below(5), world);
 
          return true;
      }
@@ -66,4 +71,25 @@ public class RockyTerrain extends Feature<NoneFeatureConfiguration> {
     static {
         IS_STONE = BlockStatePredicate.forBlock(Blocks.DEEPSLATE);
     }
+
+    public void createLayer(int width, BlockPos center, WorldGenLevel world)
+    {
+        BlockPos start = center.north(width/2).west(width/2);
+        for(int i=0;i<width;++i)
+        {
+            for(int j=0;j<width;++j)
+            {
+                if(i==width/2&&j==width/2)
+                {
+                    this.setBlock(world, start.east(j), Blocks.SPRUCE_LOG.defaultBlockState());
+                }else {
+
+                    this.setBlock(world, start.east(j), Blocks.SPRUCE_LEAVES.defaultBlockState());
+                }
+            }
+            start = start.south(1);
+        }
+    }
+
+
 }

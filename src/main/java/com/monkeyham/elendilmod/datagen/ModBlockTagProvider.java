@@ -68,6 +68,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.MORDOR_BLOCK_6_SLAB.get())
                 .add(ModBlocks.MORDOR_BLOCK_6_STAIRS.get())
                 .add(ModBlocks.MORDOR_BLOCK_6_WALL.get())
+                .add(ModBlocks.SHUYAO_STONE.get())
+                .add(ModBlocks.SHUYAO_STONE_OLD.get())
         ;
 
         tag(BlockTags.MINEABLE_WITH_AXE)

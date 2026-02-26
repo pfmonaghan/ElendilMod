@@ -148,7 +148,6 @@ public static final DeferredBlock<Block> OSGILIATH_ARCH_PANE = registerBlock("os
     public static final DeferredBlock<WaterlilyBlock> DEAD_MARSHES_CORPSE_CANDLE = registerBlock("dead_marshes_corpse_candle",
             ()->new WaterlilyBlock(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.SOUL_SAND).noOcclusion().noCollission().noLootTable()));
 
-
     public static final DeferredBlock<Block> ITHILIEN_TREE_LOG = registerBlock("ithilien_tree_log",
             ()->new ModFlammableRotatedBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
     public static final DeferredBlock<Block> ITHILIEN_TREE_WOOD = registerBlock("ithilien_tree_wood",
@@ -196,6 +195,14 @@ public static final DeferredBlock<Block> OSGILIATH_ARCH_PANE = registerBlock("os
 
     public static final DeferredBlock<Block> ITHILIEN_TREE_SAPLING = registerBlock("ithilien_tree_sapling",
             ()->new SaplingBlock( ITHILIEN_TREE,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+
+
+    public static final DeferredBlock<Block> SHUYAO_GRASS = registerBlock("shuyao_grass",
+            ()->new Block(BlockBehaviour.Properties.of().strength(4f).sound(SoundType.GRASS).noOcclusion().noCollission()));
+    public static final DeferredBlock<Block> SHUYAO_STONE = registerBlock("shuyao_stone",
+            ()-> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> SHUYAO_STONE_OLD = registerBlock("shuyao_stone_old",
+            ()-> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block)
     {

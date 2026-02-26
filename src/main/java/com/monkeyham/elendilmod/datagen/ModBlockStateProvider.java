@@ -112,6 +112,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         leavesBlock(ModBlocks.ITHILIEN_TREE_LEAVES);
         saplingBlock(ModBlocks.ITHILIEN_TREE_SAPLING);
 
+        simpleBlockWithItem(ModBlocks.SHUYAO_GRASS.get(), models().cross("shuyao_grass", modLoc("block/shuyao_grass")).renderType("cutout"));
+        blockWithItem(ModBlocks.SHUYAO_STONE);
+        blockWithItem(ModBlocks.SHUYAO_STONE_OLD);
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock)

@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-21T21:13:12.1411764	Loot Tables
+// 1.21.1	2026-02-26T15:54:03.6819487	Loot Tables
 8b5c65c4b6ae55b573cf4a83e7dd911732cd60ea data/elendilmod/loot_table/blocks/amon_hen_statue_eagle.json
 22ba0f302c78bac0bcde2fa3722da4c59bb6693e data/elendilmod/loot_table/blocks/dead_marshes_grass_1.json
 d467bbc9f83992113caf826e91221009f096e5cc data/elendilmod/loot_table/blocks/dead_marshes_grass_2.json
@@ -57,5 +57,8 @@ dcda1fe3ea92ff7586693bce96778fc5a757bd00 data/elendilmod/loot_table/blocks/osgil
 2f176e4101f55ed7bc93ae36840b86e7a0fc84ba data/elendilmod/loot_table/blocks/osgiliath_stone_brick_1_slab.json
 d757b2139f6aae0d2594cca488e0cb2299cffc30 data/elendilmod/loot_table/blocks/osgiliath_stone_brick_1_stairs.json
 e496928280c65bae71bb87a1c9ca8142932bd63b data/elendilmod/loot_table/blocks/osgiliath_stone_brick_1_wall.json
+c9a8581ddb455b4e798140abd7c7bd41808de7b2 data/elendilmod/loot_table/blocks/shuyao_grass.json
+f550c535a895ee1847a071f8d6f09adab2f3e338 data/elendilmod/loot_table/blocks/shuyao_stone.json
+30c5e240a15c85ee53b03e5ec8129fc481a4a213 data/elendilmod/loot_table/blocks/shuyao_stone_old.json
 166c8eba38a7f5c74bb88558ca451aa697274f53 data/elendilmod/loot_table/blocks/stripped_ithilien_tree_log.json
 f88d22bfab03822b9bfaba3737e86a29301b9eea data/elendilmod/loot_table/blocks/stripped_ithilien_tree_wood.json

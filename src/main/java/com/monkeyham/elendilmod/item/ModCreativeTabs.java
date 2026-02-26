@@ -60,6 +60,11 @@ public class ModCreativeTabs {
 
 
 
+                output.accept(ModBlocks.SHUYAO_STONE);
+                output.accept(ModBlocks.SHUYAO_STONE_OLD);
+
+
+
             })
 
             .build());
@@ -73,6 +78,7 @@ public class ModCreativeTabs {
                 output.accept(ModBlocks.DEAD_MARSHES_GRASS_2);
                 output.accept(ModBlocks.DEAD_MARSHES_CORPSE_CANDLE);
                 output.accept(ModItems.GECKO_SPAWN_EGG);
+                output.accept(ModBlocks.SHUYAO_GRASS);
 
             }).build());
 

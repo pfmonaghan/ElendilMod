@@ -20,7 +20,7 @@
     }
   },
   "start_height": {
-    "absolute": 0
+    "absolute": 2
   },
   "start_pool": "elendilmod:osgiliath_ruins_1",
   "step": "surface_structures",

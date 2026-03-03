@@ -62,6 +62,7 @@ public class ModCreativeTabs {
 
                 output.accept(ModBlocks.SHUYAO_STONE);
                 output.accept(ModBlocks.SHUYAO_STONE_OLD);
+                output.accept(ModBlocks.POLISHED_DIORITE_VERTICAL_SLAB);
 
 
 

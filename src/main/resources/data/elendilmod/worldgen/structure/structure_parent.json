@@ -10,7 +10,7 @@
 
   },
   "start_height": {
-    "absolute": 0
+    "absolute": 1
   },
   "start_pool": "elendilmod:mordor_keep/start_pool",
   "step": "surface_structures",

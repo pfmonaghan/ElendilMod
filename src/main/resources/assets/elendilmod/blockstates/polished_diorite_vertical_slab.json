@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "elendilmod:block/polished_diorite_vertical_slab"
+    },
+    "facing=south": {
+      "model": "elendilmod:block/polished_diorite_vertical_slab",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "elendilmod:block/polished_diorite_vertical_slab",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "elendilmod:block/polished_diorite_vertical_slab",
+      "y": 270
+    }
+  }
+}

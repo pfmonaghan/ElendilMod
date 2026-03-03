@@ -100,6 +100,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.SHUYAO_STONE.get());
         dropSelf(ModBlocks.SHUYAO_STONE_OLD.get());
 
+        dropSelf(ModBlocks.POLISHED_DIORITE_VERTICAL_SLAB.get());
+
 
     }
 

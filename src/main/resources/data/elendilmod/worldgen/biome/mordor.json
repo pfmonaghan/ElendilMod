@@ -81,7 +81,7 @@
 
         ],
         [
-          "elendilmod:diamond_block_feature_placed_key"
+
         ],
         []
     ],
@@ -96,7 +96,5 @@
             }
         ]
     }
-
-
 
 }

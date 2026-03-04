@@ -14,6 +14,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class OsgiliathArch2 extends HorizontalDirectionalBlock {
 
+    private static final VoxelShape SHAPE = Block.box(0,15,0,16,16,16);
     public static final MapCodec<OsgiliathArch2> CODEC = simpleCodec(OsgiliathArch2::new);
 
     public OsgiliathArch2(Properties properties) {
@@ -34,5 +35,9 @@ public class OsgiliathArch2 extends HorizontalDirectionalBlock {
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING);
         super.createBlockStateDefinition(builder);
+    }
+
+    public static VoxelShape getSHAPE() {
+        return SHAPE;
     }
 }

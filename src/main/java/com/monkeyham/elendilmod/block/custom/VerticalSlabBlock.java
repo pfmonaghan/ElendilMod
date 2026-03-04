@@ -2,6 +2,7 @@ package com.monkeyham.elendilmod.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
@@ -17,6 +18,9 @@ public class VerticalSlabBlock extends HorizontalDirectionalBlock {
 
     public static final MapCodec<MordorMerlonBlock> CODEC = simpleCodec(MordorMerlonBlock::new);
     private static final VoxelShape SHAPE = Block.box(0,0,0,16,16,8);
+    private static final VoxelShape SHAPE2 = Block.box(0,0,0,8,16,16);
+    private static final VoxelShape SHAPE3 = Block.box(0,0,8,16,16,16);
+    private static final VoxelShape SHAPE4 = Block.box(8,0,0,16,16,16);
 
     public VerticalSlabBlock(Properties properties) {
         super(properties);
@@ -24,6 +28,20 @@ public class VerticalSlabBlock extends HorizontalDirectionalBlock {
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+
+        if(state.getValue(FACING)== Direction.NORTH)
+        {
+            return SHAPE3;
+        } else if (state.getValue(FACING)== Direction.SOUTH)
+        {
+            return SHAPE;
+        } else if (state.getValue(FACING)== Direction.EAST) {
+            return SHAPE2;
+        } else if (state.getValue(FACING) == Direction.WEST) {
+            return SHAPE4;
+        }
+
+
         return SHAPE;
     }
 

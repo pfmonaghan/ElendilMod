@@ -159,7 +159,7 @@ public static final DeferredBlock<Block> OSGILIATH_ARCH_PANE = registerBlock("os
 
 
     public static final DeferredBlock<Block> POLISHED_DIORITE_VERTICAL_SLAB = registerBlock("polished_diorite_vertical_slab",
-            ()->new VerticalSlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_DIORITE)));
+            ()->new VerticalSlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_DIORITE).noOcclusion()));
 
     public static final DeferredBlock<Block> ITHILIEN_TREE_PLANKS = registerBlock("ithilien_tree_planks",
             ()->new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)){

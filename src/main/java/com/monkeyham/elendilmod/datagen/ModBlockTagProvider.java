@@ -68,9 +68,21 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.MORDOR_BLOCK_6_SLAB.get())
                 .add(ModBlocks.MORDOR_BLOCK_6_STAIRS.get())
                 .add(ModBlocks.MORDOR_BLOCK_6_WALL.get())
+                .add(ModBlocks.CIRITH_UNGOL_BLOCK.get())
+                .add(ModBlocks.CIRITH_UNGOL_SLAB.get())
+                .add(ModBlocks.CIRITH_UNGOL_STAIRS.get())
+                .add(ModBlocks.CIRITH_UNGOL_WALL.get())
+                .add(ModBlocks.CIRITH_UNGOL_VERTICAL_SLAB.get())
+                .add(ModBlocks.CIRITH_UNGOL_SMALL_WINDOW_TOP.get())
+                .add(ModBlocks.CIRITH_UNGOL_SMALL_WINDOW_BOTTOM.get())
                 .add(ModBlocks.SHUYAO_STONE.get())
                 .add(ModBlocks.SHUYAO_STONE_OLD.get())
                 .add(ModBlocks.POLISHED_DIORITE_VERTICAL_SLAB.get())
+                .add(ModBlocks.OSGILIATH_STONE_1_VERTICAL_SLAB.get())
+                .add(ModBlocks.ARCH_2x2_TOP.get())
+                .add(ModBlocks.ARCH_2x2_MIDDLE.get())
+                .add(ModBlocks.ARCH_2x2_BOTTOM.get())
+                .add(ModBlocks.ARCH_1x1.get())
         ;
 
         tag(BlockTags.MINEABLE_WITH_AXE)
@@ -88,7 +100,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.MORDOR_BLOCK_3_WALL.get())
                 .add(ModBlocks.MORDOR_BLOCK_4_WALL.get())
                 .add(ModBlocks.MORDOR_BLOCK_5_WALL.get())
-                .add(ModBlocks.MORDOR_BLOCK_6_WALL.get());
+                .add(ModBlocks.MORDOR_BLOCK_6_WALL.get())
+                .add(ModBlocks.CIRITH_UNGOL_WALL.get())
+                .add(ModBlocks.POLISHED_DIORITE_WALL.get());
         tag(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.ITHILIEN_TREE_LOG.get())
                 .add(ModBlocks.ITHILIEN_TREE_WOOD.get())

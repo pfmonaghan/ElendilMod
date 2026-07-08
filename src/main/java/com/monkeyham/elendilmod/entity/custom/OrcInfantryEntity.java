@@ -56,7 +56,7 @@ public class OrcInfantryEntity extends AbstractIllager {
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MOVEMENT_SPEED, 0.35F)
-                .add(Attributes.FOLLOW_RANGE, 24.0)
+                .add(Attributes.FOLLOW_RANGE, 35.0F)
                 .add(Attributes.MAX_HEALTH, 24.0)
                 .add(Attributes.ATTACK_DAMAGE, 5.0);
     }
@@ -148,8 +148,11 @@ public class OrcInfantryEntity extends AbstractIllager {
         int mainItemInt = random.nextInt(100);
         if(mainItemInt<49){
             this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.MORDOR_FALCHION.get()));
+            if(random.nextBoolean()){this.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(ModItems.MORDOR_SHIELD_1.get()));}
         }else if(mainItemInt>49 && mainItemInt<74 ){
             this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.MORDOR_AXE.get()));
+        }else if(mainItemInt>74 && mainItemInt<89 ){
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.MORDOR_GLAIVE.get()));
         }else {
 
             this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.MORDOR_MACE.get()));

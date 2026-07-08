@@ -47,8 +47,20 @@
     "elendilmod:mordor_block_6_slab",
     "elendilmod:mordor_block_6_stairs",
     "elendilmod:mordor_block_6_wall",
+    "elendilmod:cirith_ungol_block",
+    "elendilmod:cirith_ungol_slab",
+    "elendilmod:cirith_ungol_stairs",
+    "elendilmod:cirith_ungol_wall",
+    "elendilmod:cirith_ungol_vertical_slab",
+    "elendilmod:cirith_ungol_small_window_top",
+    "elendilmod:cirith_ungol_small_window_bottom",
     "elendilmod:shuyao_stone",
     "elendilmod:shuyao_stone_old",
-    "elendilmod:polished_diorite_vertical_slab"
+    "elendilmod:polished_diorite_vertical_slab",
+    "elendilmod:osgiliath_stone_1_vertical_slab",
+    "elendilmod:2x2_arch_top",
+    "elendilmod:2x2_arch_middle",
+    "elendilmod:2x2_arch_bottom",
+    "elendilmod:1x1_arch"
   ]
 }

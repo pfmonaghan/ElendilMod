@@ -1,0 +1,23 @@
+{
+  "loader": "neoforge:obj",
+  "model": "elendilmod:models/block/cirith_ungol_small_window_top.obj",
+  "textures": {
+    "elendilmod:block/cirith_ungol_block": "elendilmod:block/cirith_ungol_block",
+    "particle": "elendilmod:block/cirith_ungol_block"
+  },
+  "display": {
+    "gui": {
+      "scale": [
+        0.25,
+        0.25,
+        0.25
+      ]
+    }
+  },
+  "automatic_culling": true,
+  "shade_quads": true,
+  "flip_v": true,
+  "emissive_ambient": false,
+  "ambientToFullbright": false,
+  "diffuseLighting": true
+}

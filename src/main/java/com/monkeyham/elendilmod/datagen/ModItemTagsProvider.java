@@ -24,7 +24,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.SWORDS)
                 .add(ModItems.MORDOR_FALCHION.get())
                 .add(ModItems.MORDOR_MACE.get())
-                .add(ModItems.MORDOR_HALBERD.get());
+                .add(ModItems.MORDOR_HALBERD.get())
+                .add(ModItems.MORDOR_GLAIVE.get());
         tag(ItemTags.AXES)
                 .add(ModItems.MORDOR_AXE.get());
         tag(ItemTags.LOGS_THAT_BURN)
@@ -34,5 +35,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModBlocks.STRIPPED_ITHILIEN_TREE_WOOD.get().asItem());
         tag(ItemTags.PLANKS)
                 .add(ModBlocks.ITHILIEN_TREE_PLANKS.get().asItem());
+
+
     }
 }

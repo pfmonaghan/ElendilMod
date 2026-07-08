@@ -5,6 +5,8 @@ import com.monkeyham.elendilmod.entity.client.GeckoRenderer;
 import com.monkeyham.elendilmod.entity.client.Gondor.GondorRenderer;
 import com.monkeyham.elendilmod.entity.client.OrcArcherRenderer;
 import com.monkeyham.elendilmod.entity.client.OrcInfantryRenderer;
+//import com.monkeyham.elendilmod.shields.model.GondorShieldModel;
+//import com.monkeyham.elendilmod.shields.render.item.ModelLayers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.api.distmarker.Dist;
@@ -13,8 +15,10 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import org.jline.utils.Log;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
 @Mod(value = ElendilMod.MODID, dist = Dist.CLIENT)
@@ -39,4 +43,12 @@ public class ElendilModClient {
         EntityRenderers.register(ModEntities.ORC_ARCHER.get(), OrcArcherRenderer::new);
         EntityRenderers.register(ModEntities.GONDOR_INFANTRY.get(), GondorRenderer::new);
     }
+
+    @SubscribeEvent
+    public static void registerModelLayers(EntityRenderersEvent.RegisterLayerDefinitions ev){
+        Log.info("Registering Model Layers!");
+        //ev.registerLayerDefinition(ModelLayers.GONDOR_SHIELD, GondorShieldModel::createLayer);
+        Log.info("Model Layer registration complete!");
+    }
+
 }

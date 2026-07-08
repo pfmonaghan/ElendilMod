@@ -66,7 +66,7 @@ public class OrcArcherEntity extends AbstractIllager implements RangedAttackMob 
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MOVEMENT_SPEED, 0.35F)
-                .add(Attributes.FOLLOW_RANGE, 32.0)
+                .add(Attributes.FOLLOW_RANGE, 35.0F)
                 .add(Attributes.MAX_HEALTH, 24.0)
                 .add(Attributes.ATTACK_DAMAGE, 5.0);
     }

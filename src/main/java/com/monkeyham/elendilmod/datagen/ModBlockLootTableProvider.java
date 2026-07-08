@@ -83,6 +83,14 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.MORDOR_BLOCK_6_STAIRS.get());
         dropSelf(ModBlocks.MORDOR_BLOCK_6_WALL.get());
 
+        dropSelf(ModBlocks.CIRITH_UNGOL_BLOCK.get());
+        dropSelf(ModBlocks.CIRITH_UNGOL_SLAB.get());
+        dropSelf(ModBlocks.CIRITH_UNGOL_STAIRS.get());
+        dropSelf(ModBlocks.CIRITH_UNGOL_WALL.get());
+        dropSelf(ModBlocks.CIRITH_UNGOL_VERTICAL_SLAB.get());
+        dropSelf(ModBlocks.CIRITH_UNGOL_SMALL_WINDOW_BOTTOM.get());
+        dropSelf(ModBlocks.CIRITH_UNGOL_SMALL_WINDOW_TOP.get());
+
         dropSelf(ModBlocks.MORDOR_DOOR_1.get());
         dropSelf(ModBlocks.MORDOR_TRAPDOOR_1.get());
 
@@ -101,6 +109,12 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.SHUYAO_STONE_OLD.get());
 
         dropSelf(ModBlocks.POLISHED_DIORITE_VERTICAL_SLAB.get());
+        dropSelf(ModBlocks.OSGILIATH_STONE_1_VERTICAL_SLAB.get());
+        dropSelf(ModBlocks.ARCH_2x2_TOP.get());
+        dropSelf(ModBlocks.ARCH_2x2_MIDDLE.get());
+        dropSelf(ModBlocks.ARCH_2x2_BOTTOM.get());
+        dropSelf(ModBlocks.ARCH_1x1.get());
+        dropSelf(ModBlocks.POLISHED_DIORITE_WALL.get());
 
 
     }

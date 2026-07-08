@@ -92,16 +92,28 @@ public class GondorInfantry extends GondorSoldierAbstract{
         int mainItemInt = random.nextInt(100);
         if(mainItemInt<49){
             this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SWORD));
+
         }else if(mainItemInt>49 && mainItemInt<74 ){
-            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_AXE));
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.GONDOR_SPEAR.get()));
+
         }else {
 
-            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.MACE));
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_AXE));
         }
-
+        if(random.nextBoolean()){
+            this.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(ModItems.GONDOR_SHIELD.get()));
+        }
         this.setItemSlot(EquipmentSlot.BODY, new ItemStack(Items.IRON_CHESTPLATE));
         this.handDropChances[EquipmentSlot.MAINHAND.getIndex()] = 10.0F;
         super.populateDefaultEquipmentSlots(random, difficulty);
     }
 
+    @Override
+    public AbstractIllager.IllagerArmPose getArmPose() {
+        if(this.isAggressive())
+        {
+            return AbstractIllager.IllagerArmPose.ATTACKING;
+        }
+        return super.getArmPose();
+    }
 }

@@ -6,6 +6,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.animal.AbstractGolem;
+import net.minecraft.world.entity.monster.AbstractIllager;
 import net.minecraft.world.level.Level;
 
 import javax.annotation.Nullable;
@@ -42,5 +43,9 @@ public class GondorSoldierAbstract extends AbstractGolem {
     @Override
     public void restrictTo(BlockPos pos, int distance) {
         super.restrictTo(pos, distance);
+    }
+
+    public AbstractIllager.IllagerArmPose getArmPose(){
+        return AbstractIllager.IllagerArmPose.NEUTRAL;
     }
 }

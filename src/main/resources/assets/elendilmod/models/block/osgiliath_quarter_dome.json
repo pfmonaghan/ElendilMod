@@ -22,5 +22,7 @@
   "automatic_culling": false,
   "shade_quads": false,
   "flip_v": true,
-  "emissive_ambient": false
+  "emissive_ambient": false,
+  "ambientToFullbright": false,
+  "diffuseLighting": false
 }

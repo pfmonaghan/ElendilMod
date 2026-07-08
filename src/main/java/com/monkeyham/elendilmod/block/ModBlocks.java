@@ -59,6 +59,7 @@ public static final DeferredBlock<WallBlock> OSGILIATH_RUBBLE_WALL = registerBlo
     public static final DeferredBlock<WallBlock> OSGILIATH_STONE_BRICK_1_WALL = registerBlock("osgiliath_stone_brick_1_wall",
             ()->new WallBlock(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
 
+
 public static final DeferredBlock<Block> OSGILIATH_ARCH_PANE = registerBlock("osgiliath_arch_pane",
             ()-> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noCollission()));
     public static final DeferredBlock<Block> OSGILIATH_ARCH_PANE_BOTTOM = registerBlock("osgiliath_arch_pane_bottom",
@@ -132,6 +133,24 @@ public static final DeferredBlock<Block> OSGILIATH_ARCH_PANE = registerBlock("os
     public static final DeferredBlock<WallBlock> MORDOR_BLOCK_6_WALL = registerBlock("mordor_block_6_wall",
             ()->new WallBlock(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
 
+
+
+    public static final DeferredBlock<Block> CIRITH_UNGOL_BLOCK = registerBlock("cirith_ungol_block",
+            ()-> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<SlabBlock> CIRITH_UNGOL_SLAB = registerBlock("cirith_ungol_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<StairBlock> CIRITH_UNGOL_STAIRS = registerBlock("cirith_ungol_stairs",
+            ()-> new StairBlock(ModBlocks.CIRITH_UNGOL_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<WallBlock> CIRITH_UNGOL_WALL = registerBlock("cirith_ungol_wall",
+            ()->new WallBlock(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<VerticalSlabBlock> CIRITH_UNGOL_VERTICAL_SLAB = registerBlock("cirith_ungol_vertical_slab",
+            ()->new VerticalSlabBlock(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CIRITH_UNGOL_SMALL_WINDOW_TOP = registerBlock("cirith_ungol_small_window_top",
+            ()-> new OsgiliathArch2(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noOcclusion().noCollission()));
+    public static final DeferredBlock<Block> CIRITH_UNGOL_SMALL_WINDOW_BOTTOM = registerBlock("cirith_ungol_small_window_bottom",
+            ()-> new OsgiliathArch2(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noOcclusion().noCollission()));
+
+
     public static final DeferredBlock<DoorBlock> OSGILIATH_DOOR_1 = registerBlock(
             "osgiliath_door_1", ()-> new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.of().strength(2f).noOcclusion().requiresCorrectToolForDrops()));
     public static final DeferredBlock<DoorBlock> MORDOR_DOOR_1 = registerBlock(
@@ -160,6 +179,12 @@ public static final DeferredBlock<Block> OSGILIATH_ARCH_PANE = registerBlock("os
 
     public static final DeferredBlock<Block> POLISHED_DIORITE_VERTICAL_SLAB = registerBlock("polished_diorite_vertical_slab",
             ()->new VerticalSlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_DIORITE).noOcclusion()));
+    public static final DeferredBlock<Block> OSGILIATH_STONE_1_VERTICAL_SLAB = registerBlock("osgiliath_stone_1_vertical_slab",
+            ()->new VerticalSlabBlock(BlockBehaviour.Properties.ofFullCopy(ModBlocks.OSGILIATH_STONE_1.get()).noOcclusion()));
+    public static final DeferredBlock<WallBlock> POLISHED_DIORITE_WALL = registerBlock("polished_diorite_wall",
+            ()->new WallBlock(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
+
+
 
     public static final DeferredBlock<Block> ITHILIEN_TREE_PLANKS = registerBlock("ithilien_tree_planks",
             ()->new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)){
@@ -207,6 +232,15 @@ public static final DeferredBlock<Block> OSGILIATH_ARCH_PANE = registerBlock("os
             ()-> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> SHUYAO_STONE_OLD = registerBlock("shuyao_stone_old",
             ()-> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+
+    public static final DeferredBlock<Block> ARCH_2x2_TOP = registerBlock("2x2_arch_top",
+            ()-> new OsgiliathArch2(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noOcclusion().noCollission()));
+    public static final DeferredBlock<Block> ARCH_2x2_MIDDLE = registerBlock("2x2_arch_middle",
+            ()-> new OsgiliathArch2(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noOcclusion()));
+    public static final DeferredBlock<Block> ARCH_2x2_BOTTOM = registerBlock("2x2_arch_bottom",
+            ()-> new OsgiliathArch2(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noOcclusion().noCollission()));
+    public static final DeferredBlock<Block> ARCH_1x1 = registerBlock("1x1_arch",
+            ()-> new OsgiliathArch2(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noOcclusion().noCollission()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block)
     {

@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=north": {
+			"model": "elendilmod:block/2x2_arch_top"
+		},
+		"facing=south": {
+			"model": "elendilmod:block/2x2_arch_top",
+			"y": 180
+		},
+		"facing=east": {
+			"model": "elendilmod:block/2x2_arch_top",
+			"y": 90
+		},
+		"facing=west": {
+			"model": "elendilmod:block/2x2_arch_top",
+			"y": 270
+		}
+	}
+}

@@ -37,7 +37,13 @@ public class OsgiliathArch2 extends HorizontalDirectionalBlock {
         super.createBlockStateDefinition(builder);
     }
 
-    public static VoxelShape getSHAPE() {
-        return SHAPE;
+    @Override
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return super.getShape(state, level, pos, context);
     }
+
+    
+
+
+
 }

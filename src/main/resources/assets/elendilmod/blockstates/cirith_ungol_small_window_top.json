@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=north": {
+			"model": "elendilmod:block/cirith_ungol_small_window_top"
+		},
+		"facing=south": {
+			"model": "elendilmod:block/cirith_ungol_small_window_top",
+			"y": 180
+		},
+		"facing=east": {
+			"model": "elendilmod:block/cirith_ungol_small_window_top",
+			"y": 90
+		},
+		"facing=west": {
+			"model": "elendilmod:block/cirith_ungol_small_window_top",
+			"y": 270
+		}
+	}
+}

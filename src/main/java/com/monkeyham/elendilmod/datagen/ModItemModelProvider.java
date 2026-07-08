@@ -5,12 +5,16 @@ import com.monkeyham.elendilmod.block.ModBlocks;
 import com.monkeyham.elendilmod.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ShieldItem;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 public class ModItemModelProvider extends ItemModelProvider {
 
@@ -28,7 +32,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.MORDOR_AXE);
         handheldItem(ModItems.MORDOR_MACE);
         handheldItem(ModItems.MORDOR_HALBERD);
-        handheldItem(ModItems.GONDOR_SHIELD);
+        //shieldItem(ModItems.GONDOR_SHIELD);
 
         wallItem(ModBlocks.OSGILIATH_RUBBLE_WALL, ModBlocks.OSGILIATH_RUBBLE_1);
         wallItem(ModBlocks.OSGILIATH_STONE_1_WALL, ModBlocks.OSGILIATH_STONE_1);
@@ -39,14 +43,29 @@ public class ModItemModelProvider extends ItemModelProvider {
         wallItem(ModBlocks.MORDOR_BLOCK_4_WALL, ModBlocks.MORDOR_BLOCK_4);
         wallItem(ModBlocks.MORDOR_BLOCK_5_WALL, ModBlocks.MORDOR_BLOCK_5);
         wallItem(ModBlocks.MORDOR_BLOCK_6_WALL, ModBlocks.MORDOR_BLOCK_6);
+        wallItem(ModBlocks.CIRITH_UNGOL_WALL, ModBlocks.CIRITH_UNGOL_BLOCK);
+        withExistingParent(ModBlocks.POLISHED_DIORITE_WALL.getId().getPath(), mcLoc("block/wall_inventory")).texture("wall",
+                ResourceLocation.fromNamespaceAndPath("minecraft", "block/polished_diorite"));
 
         withExistingParent(ModItems.GECKO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.ORC_INFANTRY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.ORC_ARCHER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.GONDOR_INFANTRY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.EYE_OF_SAURON_PATTERN_ITEM.getId().getPath(), mcLoc("item/creeper_banner_pattern"));
 
         saplingItem(ModBlocks.ITHILIEN_TREE_SAPLING);
 
+
+    }
+
+    private ResourceLocation shieldItem(DeferredItem<?> shieldItem) {
+        String p = shieldItem.getId().getPath();
+        ModelFile blockingModel = withExistingParent(shieldItem.getId().getPath() + "_blocking", ResourceLocation.fromNamespaceAndPath(ElendilMod.MODID, "basic_shield_base_blocking"))
+                .texture("layer0", "item/" + shieldItem.getId().getPath());
+        return withExistingParent(p, ResourceLocation.fromNamespaceAndPath(ElendilMod.MODID, "basic_shield_base"))
+                .texture("layer0", "item/" + p)
+                .override().predicate(ResourceLocation.withDefaultNamespace("blocking"), 1.0f).model(blockingModel).end()
+                .getLocation();
     }
 
     private ItemModelBuilder saplingItem(DeferredBlock<Block> item) {

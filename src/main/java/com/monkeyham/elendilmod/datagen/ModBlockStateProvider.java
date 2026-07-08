@@ -5,10 +5,7 @@ import com.monkeyham.elendilmod.block.ModBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -83,6 +80,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         stairBlockWithItem(ModBlocks.MORDOR_BLOCK_6_STAIRS, ModBlocks.MORDOR_BLOCK_6);
         wallBlock(ModBlocks.MORDOR_BLOCK_6_WALL.get(), blockTexture(ModBlocks.MORDOR_BLOCK_6.get()));
 
+        blockWithItem(ModBlocks.CIRITH_UNGOL_BLOCK);
+        slabBlockWithItem(ModBlocks.CIRITH_UNGOL_SLAB, ModBlocks.CIRITH_UNGOL_BLOCK);
+        stairBlockWithItem(ModBlocks.CIRITH_UNGOL_STAIRS, ModBlocks.CIRITH_UNGOL_BLOCK);
+        wallBlock(ModBlocks.CIRITH_UNGOL_WALL.get(), blockTexture(ModBlocks.CIRITH_UNGOL_BLOCK.get()));
+
         doorBlock(ModBlocks.MORDOR_DOOR_1.get(), modLoc("block/mordor_door_1_bottom"), modLoc("block/mordor_door_1_top"));
         doorBlock(ModBlocks.OSGILIATH_DOOR_1.get(), modLoc("block/osgiliath_door_1_bottom"), modLoc("block/osgiliath_door_1_top"));
         trapdoorBlock(ModBlocks.MORDOR_TRAPDOOR_1.get(), modLoc("block/mordor_trapdoor_1"), true);
@@ -115,6 +117,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.SHUYAO_GRASS.get(), models().cross("shuyao_grass", modLoc("block/shuyao_grass")).renderType("cutout"));
         blockWithItem(ModBlocks.SHUYAO_STONE);
         blockWithItem(ModBlocks.SHUYAO_STONE_OLD);
+
+        wallBlock(ModBlocks.POLISHED_DIORITE_WALL.get(), blockTexture(Blocks.POLISHED_DIORITE));
+
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock)

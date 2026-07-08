@@ -2,6 +2,8 @@ package com.monkeyham.elendilmod.item;
 
 import com.monkeyham.elendilmod.ElendilMod;
 import com.monkeyham.elendilmod.entity.ModEntities;
+import com.monkeyham.elendilmod.item.custom.ModBannerPatterns;
+import com.monkeyham.elendilmod.item.custom.shields.GondorShield;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -33,8 +35,17 @@ public class ModItems {
 
     public static final DeferredItem<SwordItem> MORDOR_HALBERD = ITEMS.register("mordor_halberd",
             () -> new SwordItem(Tiers.IRON, new Item.Properties().attributes(SwordItem.createAttributes(Tiers.IRON, 7, -3.45f))));
-    public static final DeferredItem<ShieldItem> GONDOR_SHIELD = ITEMS.register("gondor_shield",
-            () -> new ShieldItem(new Item.Properties()));
+    public static final DeferredItem<SwordItem> MORDOR_GLAIVE = ITEMS.register("mordor_glaive",
+            () -> new SwordItem(Tiers.IRON, new Item.Properties().attributes(SwordItem.createAttributes(Tiers.IRON, 8, -3.95f))));
+    public static final DeferredItem<SwordItem> GONDOR_SPEAR = ITEMS.register("gondor_spear",
+            () -> new SwordItem(Tiers.IRON, new Item.Properties().attributes(SwordItem.createAttributes(Tiers.IRON, 8, -3.95f))));
+    public static final DeferredItem<GondorShield> GONDOR_SHIELD = ITEMS.register("gondor_shield",
+            () -> new GondorShield(8, new Item.Properties()));
+    public static final DeferredItem<GondorShield> MORDOR_SHIELD_1 = ITEMS.register("mordor_shield_1",
+            () -> new GondorShield(8, new Item.Properties()));
+
+    public static final DeferredItem<BannerPatternItem> EYE_OF_SAURON_PATTERN_ITEM = ITEMS.register("eye_of_sauron_pattern",
+            () -> new BannerPatternItem(ModBannerPatterns.EYE_OF_SAURON, new Item.Properties()));
 
 
     public static void register(IEventBus eventBus)

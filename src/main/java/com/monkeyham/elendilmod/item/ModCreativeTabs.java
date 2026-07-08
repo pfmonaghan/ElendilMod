@@ -48,6 +48,7 @@ public class ModCreativeTabs {
 
                 output.accept(ModBlocks.OSGILIATH_DOOR_1);
                 output.accept(ModItems.GONDOR_SHIELD);
+                output.accept(ModItems.GONDOR_SPEAR);
                 output.accept(ModItems.GONDOR_INFANTRY_SPAWN_EGG);
 
                 output.accept(ModBlocks.ITHILIEN_TREE_LOG);
@@ -63,6 +64,12 @@ public class ModCreativeTabs {
                 output.accept(ModBlocks.SHUYAO_STONE);
                 output.accept(ModBlocks.SHUYAO_STONE_OLD);
                 output.accept(ModBlocks.POLISHED_DIORITE_VERTICAL_SLAB);
+                output.accept(ModBlocks.POLISHED_DIORITE_WALL);
+                output.accept(ModBlocks.OSGILIATH_STONE_1_VERTICAL_SLAB);
+                output.accept(ModBlocks.ARCH_2x2_TOP);
+                output.accept(ModBlocks.ARCH_2x2_MIDDLE);
+                output.accept(ModBlocks.ARCH_2x2_BOTTOM);
+                output.accept(ModBlocks.ARCH_1x1);
 
 
 
@@ -122,6 +129,12 @@ public class ModCreativeTabs {
                 output.accept(ModBlocks.MORDOR_BLOCK_6_STAIRS);
                 output.accept(ModBlocks.MORDOR_BLOCK_6_WALL);
 
+                output.accept(ModBlocks.CIRITH_UNGOL_BLOCK);
+                output.accept(ModBlocks.CIRITH_UNGOL_SLAB);
+                output.accept(ModBlocks.CIRITH_UNGOL_STAIRS);
+                output.accept(ModBlocks.CIRITH_UNGOL_WALL);
+                output.accept(ModBlocks.CIRITH_UNGOL_VERTICAL_SLAB);
+
                 output.accept(ModBlocks.MORDOR_DOOR_1);
             output.accept(ModBlocks.MORDOR_TRAPDOOR_1);
 
@@ -129,8 +142,11 @@ public class ModCreativeTabs {
             output.accept(ModItems.MORDOR_AXE);
             output.accept(ModItems.MORDOR_MACE);
             output.accept(ModItems.MORDOR_HALBERD);
+            output.accept(ModItems.MORDOR_GLAIVE);
+                output.accept(ModItems.MORDOR_SHIELD_1);
             output.accept(ModItems.ORC_INFANTRY_SPAWN_EGG);
             output.accept(ModItems.ORC_ARCHER_SPAWN_EGG);
+            output.accept(ModItems.EYE_OF_SAURON_PATTERN_ITEM);
             }).build());
 
 

@@ -6,6 +6,7 @@ import com.monkeyham.elendilmod.ElendilMod;
 import com.monkeyham.elendilmod.entity.custom.GondorInfantry;
 import com.monkeyham.elendilmod.entity.custom.GondorSoldierAbstract;
 import com.monkeyham.elendilmod.entity.custom.OrcInfantryEntity;
+import net.minecraft.client.model.AnimationUtils;
 import net.minecraft.client.model.ArmedModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -13,7 +14,9 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.HumanoidArm;
+import net.minecraft.world.entity.monster.AbstractIllager;
 
 public class GondorModel <T extends GondorSoldierAbstract> extends HierarchicalModel<T> implements ArmedModel {
 
@@ -86,7 +89,44 @@ public class GondorModel <T extends GondorSoldierAbstract> extends HierarchicalM
 
     @Override
     public void setupAnim(GondorSoldierAbstract entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-
+        this.root().getAllParts().forEach(ModelPart::resetPose);
+        this.Head.yRot = netHeadYaw * (float) (Math.PI / 180.0);
+        this.Head.xRot = headPitch * (float) (Math.PI / 180.0);
+        if (this.riding) {
+            this.ArmR.xRot = (float) (-Math.PI / 5);
+            this.ArmR.yRot = 0.0F;
+            this.ArmR.zRot = 0.0F;
+            this.ArmL.xRot = (float) (-Math.PI / 5);
+            this.ArmL.yRot = 0.0F;
+            this.ArmL.zRot = 0.0F;
+            this.LegR.xRot = -1.4137167F;
+            this.LegR.yRot = (float) (Math.PI / 10);
+            this.LegR.zRot = 0.07853982F;
+            this.LegL.xRot = -1.4137167F;
+            this.LegL.yRot = (float) (-Math.PI / 10);
+            this.LegL.zRot = -0.07853982F;
+        } else {
+            this.ArmR.xRot = Mth.cos(limbSwing * 0.6662F + (float) Math.PI) * 2.0F * limbSwingAmount * 0.5F;
+            this.ArmR.yRot = 0.0F;
+            this.ArmR.zRot = 0.0F;
+            this.ArmL.xRot = Mth.cos(limbSwing * 0.6662F) * 2.0F * limbSwingAmount * 0.5F;
+            this.ArmL.yRot = 0.0F;
+            this.ArmL.zRot = 0.0F;
+            this.LegR.xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;
+            this.LegR.yRot = 0.0F;
+            this.LegR.zRot = 0.0F;
+            this.LegL.xRot = Mth.cos(limbSwing * 0.6662F + (float) Math.PI) * 1.4F * limbSwingAmount * 0.5F;
+            this.LegL.yRot = 0.0F;
+            this.LegL.zRot = 0.0F;
+        }
+        AbstractIllager.IllagerArmPose abstractillager$illagerarmpose = entity.getArmPose();
+        if (abstractillager$illagerarmpose == AbstractIllager.IllagerArmPose.ATTACKING) {
+           if (entity.getMainHandItem().isEmpty()) {
+                AnimationUtils.animateZombieArms(this.ArmL, this.ArmR, true, this.attackTime, ageInTicks);
+            } else {
+                AnimationUtils.swingWeaponDown(this.ArmR, this.ArmL, entity, this.attackTime, ageInTicks);
+            }
+        }
     }
 
     @Override

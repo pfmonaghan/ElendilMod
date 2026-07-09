@@ -3,6 +3,7 @@ package com.monkeyham.elendilmod.entity.custom.abstracts;
 import com.monkeyham.elendilmod.entity.custom.OrcInfantryEntity;
 import com.monkeyham.elendilmod.item.ModItems;
 import com.monkeyham.elendilmod.sound.ModSoundEvents;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.RandomSource;
@@ -47,12 +48,12 @@ public class GondorSoldierEntity extends HumanAbstract{
         super.registerGoals();
         this.goalSelector.addGoal(0, new FloatGoal(this));
         //this.goalSelector.addGoal(3, new Raider.HoldGroundAttackGoal(this, 10.0F));
+        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, new Class[0])).setAlertOthers(new Class[0]));
         this.goalSelector.addGoal(2, new MoveTowardsTargetGoal(this, 0.9, 32.0F));
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Mob.class, 5, false, false, (p_28879_) -> p_28879_ instanceof Enemy ));
-        this.goalSelector.addGoal(4, new MeleeAttackGoal(this, (double)1.0F, true));
-        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, new Class[]{IronGolem.class, HumanAbstract.class})).setAlertOthers(new Class[0]));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Mob.class, 1, false, false, (p_28879_) -> p_28879_ instanceof Enemy ));
+        this.goalSelector.addGoal(1, new MeleeAttackGoal(this, (double)1.0F, true));
         this.goalSelector.addGoal(8, new RandomStrollGoal(this, 0.8));
-        this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 7.0F, 1.0F));
+        this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 7.0F, 3.0F));
         this.goalSelector.addGoal(10, new LookAtPlayerGoal(this, Mob.class, 8.0F));
     }
 
@@ -89,8 +90,6 @@ public class GondorSoldierEntity extends HumanAbstract{
             --this.idleAnimationTimeout;
         }
     }
-
-
 
     @Override
     public @Nullable SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty,

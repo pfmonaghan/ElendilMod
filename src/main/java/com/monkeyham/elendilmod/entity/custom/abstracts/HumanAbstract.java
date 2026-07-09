@@ -1,5 +1,6 @@
 package com.monkeyham.elendilmod.entity.custom.abstracts;
 
+import com.monkeyham.elendilmod.entity.ModEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -16,6 +17,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 
+import java.util.List;
+
 public abstract class HumanAbstract extends PathfinderMob {
     protected HumanAbstract(EntityType<? extends PathfinderMob> entityType, Level level) {
         super(entityType, level);
@@ -24,11 +27,12 @@ public abstract class HumanAbstract extends PathfinderMob {
     public void aiStep() {
         this.updateSwingTime();
         this.updateNoActionTime();
+        super.aiStep();
         LivingEntity livingentity = this.getTarget();
         if (livingentity != null && (livingentity instanceof Enemy)) {
             this.noActionTime = 0;
         }
-        super.aiStep();
+
     }
 
     protected void updateNoActionTime() {
@@ -73,6 +77,17 @@ public abstract class HumanAbstract extends PathfinderMob {
 
     public boolean canAttack(LivingEntity target) {
         return target instanceof Enemy;
+    }
+
+    @Override
+    public boolean canAttackType(EntityType<?> type) {
+
+        EntityType<?>[] l = new EntityType<?>[]{ModEntities.ORC_INFANTRY.get(), ModEntities.ORC_ARCHER.get(), EntityType.ZOMBIE, EntityType.SKELETON};
+
+        for (EntityType<?> et : l) {
+            if(et == type) return true;
+        }
+        return false;
     }
 
     public boolean isAlliedTo(Entity entity) {

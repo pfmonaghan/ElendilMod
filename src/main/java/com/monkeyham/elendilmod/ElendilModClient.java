@@ -2,7 +2,6 @@ package com.monkeyham.elendilmod;
 
 import com.monkeyham.elendilmod.entity.ModEntities;
 import com.monkeyham.elendilmod.entity.client.GeckoRenderer;
-import com.monkeyham.elendilmod.entity.client.Gondor.GondorRenderer;
 import com.monkeyham.elendilmod.entity.client.Gondor.GondorRenderer2;
 import com.monkeyham.elendilmod.entity.client.OrcArcherRenderer;
 import com.monkeyham.elendilmod.entity.client.OrcInfantryRenderer;
@@ -42,7 +41,6 @@ public class ElendilModClient {
         EntityRenderers.register(ModEntities.GECKO.get(), GeckoRenderer::new);
         EntityRenderers.register(ModEntities.ORC_INFANTRY.get(), OrcInfantryRenderer::new);
         EntityRenderers.register(ModEntities.ORC_ARCHER.get(), OrcArcherRenderer::new);
-        EntityRenderers.register(ModEntities.GONDOR_INFANTRY.get(), GondorRenderer::new);
         EntityRenderers.register(ModEntities.GONDOR_SOLDIER.get(), GondorRenderer2::new);
     }
 

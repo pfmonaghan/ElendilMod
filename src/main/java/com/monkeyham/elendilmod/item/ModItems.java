@@ -23,8 +23,6 @@ public class ModItems {
             DeferredSpawnEggItem(ModEntities.ORC_INFANTRY, 0x31afaf, 0xffac00, new Item.Properties()));
     public static final DeferredItem<Item> ORC_ARCHER_SPAWN_EGG = ITEMS.register("orc_archer_spawn_egg", ()-> new
             DeferredSpawnEggItem(ModEntities.ORC_ARCHER, 0x31afaf, 0xffac00, new Item.Properties()));
-    public static final DeferredItem<Item> GONDOR_INFANTRY_SPAWN_EGG = ITEMS.register("gondor_infantry_spawn_egg", ()-> new
-            DeferredSpawnEggItem(ModEntities.GONDOR_INFANTRY, 0x31afaf, 0xffac00, new Item.Properties()));
     public static final DeferredItem<Item> GONDOR_SOLDIER_SPAWN_EGG = ITEMS.register("gondor_soldier_spawn_egg", ()-> new
             DeferredSpawnEggItem(ModEntities.GONDOR_SOLDIER, 0x31afaf, 0xffac00, new Item.Properties()));
 

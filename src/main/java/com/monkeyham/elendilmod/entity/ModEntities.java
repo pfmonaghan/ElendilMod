@@ -2,7 +2,6 @@ package com.monkeyham.elendilmod.entity;
 
 import com.monkeyham.elendilmod.ElendilMod;
 import com.monkeyham.elendilmod.entity.custom.GeckoEntity;
-import com.monkeyham.elendilmod.entity.custom.GondorInfantry;
 import com.monkeyham.elendilmod.entity.custom.OrcArcherEntity;
 import com.monkeyham.elendilmod.entity.custom.OrcInfantryEntity;
 import com.monkeyham.elendilmod.entity.custom.abstracts.GondorSoldierEntity;
@@ -31,11 +30,7 @@ public class ModEntities {
                     .of(OrcArcherEntity::new, MobCategory.MONSTER).sized(.75f, 1.85f)
                     .build("orc_archer"));
 
-    public static final Supplier<EntityType<GondorInfantry>> GONDOR_INFANTRY =
-            ENTITY_TYPES.register("gondor_infantry", ()->EntityType.Builder
-                    .of(GondorInfantry::new, MobCategory.MISC).sized(.75f, 1.85f)
-                    .build("gondor_infantry"));
-    public static final Supplier<EntityType<GondorSoldierEntity>> GONDOR_SOLDIER =
+        public static final Supplier<EntityType<GondorSoldierEntity>> GONDOR_SOLDIER =
             ENTITY_TYPES.register("gondor_soldier", ()->EntityType.Builder
                     .of(GondorSoldierEntity::new, MobCategory.MISC).sized(.75f, 1.85f)
                     .build("gondor_soldier"));

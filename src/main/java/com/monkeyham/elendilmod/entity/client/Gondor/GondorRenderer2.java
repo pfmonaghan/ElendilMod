@@ -2,7 +2,6 @@ package com.monkeyham.elendilmod.entity.client.Gondor;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.monkeyham.elendilmod.ElendilMod;
-import com.monkeyham.elendilmod.entity.custom.GondorSoldierAbstract;
 import com.monkeyham.elendilmod.entity.custom.abstracts.GondorSoldierEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

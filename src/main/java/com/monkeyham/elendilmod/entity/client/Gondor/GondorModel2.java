@@ -3,8 +3,6 @@ package com.monkeyham.elendilmod.entity.client.Gondor;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.monkeyham.elendilmod.ElendilMod;
-import com.monkeyham.elendilmod.entity.custom.GondorInfantry;
-import com.monkeyham.elendilmod.entity.custom.GondorSoldierAbstract;
 import com.monkeyham.elendilmod.entity.custom.abstracts.GondorSoldierEntity;
 import com.monkeyham.elendilmod.entity.custom.abstracts.HumanAbstract;
 import net.minecraft.client.model.AnimationUtils;

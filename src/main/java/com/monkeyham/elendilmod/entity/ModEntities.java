@@ -5,6 +5,7 @@ import com.monkeyham.elendilmod.entity.custom.GeckoEntity;
 import com.monkeyham.elendilmod.entity.custom.GondorInfantry;
 import com.monkeyham.elendilmod.entity.custom.OrcArcherEntity;
 import com.monkeyham.elendilmod.entity.custom.OrcInfantryEntity;
+import com.monkeyham.elendilmod.entity.custom.abstracts.GondorSoldierEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -34,6 +35,10 @@ public class ModEntities {
             ENTITY_TYPES.register("gondor_infantry", ()->EntityType.Builder
                     .of(GondorInfantry::new, MobCategory.MISC).sized(.75f, 1.85f)
                     .build("gondor_infantry"));
+    public static final Supplier<EntityType<GondorSoldierEntity>> GONDOR_SOLDIER =
+            ENTITY_TYPES.register("gondor_soldier", ()->EntityType.Builder
+                    .of(GondorSoldierEntity::new, MobCategory.MISC).sized(.75f, 1.85f)
+                    .build("gondor_soldier"));
 
     public static void register(IEventBus eventBus)
     {

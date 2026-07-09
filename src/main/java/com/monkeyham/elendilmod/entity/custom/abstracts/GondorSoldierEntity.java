@@ -1,6 +1,6 @@
-package com.monkeyham.elendilmod.entity.custom;
+package com.monkeyham.elendilmod.entity.custom.abstracts;
 
-import com.monkeyham.elendilmod.entity.custom.abstracts.HumanAbstract;
+import com.monkeyham.elendilmod.entity.custom.OrcInfantryEntity;
 import com.monkeyham.elendilmod.item.ModItems;
 import com.monkeyham.elendilmod.sound.ModSoundEvents;
 import net.minecraft.server.level.ServerLevel;
@@ -17,6 +17,7 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.monster.AbstractIllager;
+import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.npc.AbstractVillager;
@@ -31,7 +32,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Predicate;
 
-public class OrcInfantryEntity extends AbstractIllager implements Enemy {
+public class GondorSoldierEntity extends HumanAbstract{
+    public GondorSoldierEntity(EntityType<? extends PathfinderMob> entityType, Level level) {
+        super(entityType, level);
+    }
 
 
     public static final AnimationState idleAnimationState = new AnimationState();
@@ -42,22 +46,18 @@ public class OrcInfantryEntity extends AbstractIllager implements Enemy {
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new BreakDoorGoal(this, DOOR_BREAKING_PREDICATE));
-        this.goalSelector.addGoal(2, new RaiderOpenDoorGoal(this));
-        this.goalSelector.addGoal(3, new HoldGroundAttackGoal(this, 10.0F));
+        //this.goalSelector.addGoal(3, new Raider.HoldGroundAttackGoal(this, 10.0F));
+        this.goalSelector.addGoal(2, new MoveTowardsTargetGoal(this, 0.9, 32.0F));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Mob.class, 5, false, false, (p_28879_) -> p_28879_ instanceof Enemy ));
         this.goalSelector.addGoal(4, new MeleeAttackGoal(this, (double)1.0F, true));
-        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, new Class[]{Raider.class})).setAlertOthers(new Class[0]));
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Player.class, true));
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, HumanAbstract.class, true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, AbstractVillager.class, true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, IronGolem.class, true));
-        this.goalSelector.addGoal(8, new RandomStrollGoal(this, 0.6));
-        this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 3.0F, 1.0F));
+        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, new Class[]{IronGolem.class, HumanAbstract.class})).setAlertOthers(new Class[0]));
+        this.goalSelector.addGoal(8, new RandomStrollGoal(this, 0.8));
+        this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 7.0F, 1.0F));
         this.goalSelector.addGoal(10, new LookAtPlayerGoal(this, Mob.class, 8.0F));
     }
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Monster.createMonsterAttributes()
+        return Mob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED, 0.35F)
                 .add(Attributes.FOLLOW_RANGE, 35.0F)
                 .add(Attributes.MAX_HEALTH, 24.0)
@@ -90,30 +90,15 @@ public class OrcInfantryEntity extends AbstractIllager implements Enemy {
         }
     }
 
-    public OrcInfantryEntity(EntityType<? extends OrcInfantryEntity> entityType, Level level) {
-        super(entityType, level);
-
-    }
 
 
     @Override
     public @Nullable SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty,
-                MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData) {
+                                                  MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData) {
         RandomSource randomSource = level.getRandom();
 
         this.populateDefaultEquipmentSlots(randomSource, difficulty);
         return super.finalizeSpawn(level, difficulty, spawnType, spawnGroupData);
-    }
-
-    @Override
-    public void applyRaidBuffs(ServerLevel serverLevel, int i, boolean b) {
-        ItemStack itemstack = new ItemStack(Items.IRON_AXE);
-        this.setItemSlot(EquipmentSlot.MAINHAND, itemstack);
-    }
-
-    @Override
-    public SoundEvent getCelebrateSound() {
-        return null;
     }
 
     @Override
@@ -132,10 +117,10 @@ public class OrcInfantryEntity extends AbstractIllager implements Enemy {
     }
 
     @Override
-    public IllagerArmPose getArmPose() {
+    public HumanArmPose getArmPose() {
         if(this.isAggressive())
         {
-            return IllagerArmPose.ATTACKING;
+            return HumanAbstract.HumanArmPose.ATTACKING;
         }
         return super.getArmPose();
     }
@@ -150,23 +135,21 @@ public class OrcInfantryEntity extends AbstractIllager implements Enemy {
 
         int mainItemInt = random.nextInt(100);
         if(mainItemInt<49){
-            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.MORDOR_FALCHION.get()));
-            if(random.nextBoolean()){this.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(ModItems.MORDOR_SHIELD_1.get()));}
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SWORD));
+
         }else if(mainItemInt>49 && mainItemInt<74 ){
-            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.MORDOR_AXE.get()));
-        }else if(mainItemInt>74 && mainItemInt<89 ){
-            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.MORDOR_GLAIVE.get()));
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.GONDOR_SPEAR.get()));
+
         }else {
 
-            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.MORDOR_MACE.get()));
+            this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_AXE));
         }
-
-
+        if(random.nextBoolean()){
+            this.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(ModItems.GONDOR_SHIELD.get()));
+        }
         this.setItemSlot(EquipmentSlot.BODY, new ItemStack(Items.IRON_CHESTPLATE));
-        //this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.MORDOR_FALCHION.get()));
-        this.handDropChances[EquipmentSlot.MAINHAND.getIndex()] = 10.0F;
+        this.handDropChances[EquipmentSlot.MAINHAND.getIndex()] = 5.0F;
         super.populateDefaultEquipmentSlots(random, difficulty);
     }
-
 
 }

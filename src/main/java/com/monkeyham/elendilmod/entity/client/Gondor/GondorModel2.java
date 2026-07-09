@@ -5,7 +5,8 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.monkeyham.elendilmod.ElendilMod;
 import com.monkeyham.elendilmod.entity.custom.GondorInfantry;
 import com.monkeyham.elendilmod.entity.custom.GondorSoldierAbstract;
-import com.monkeyham.elendilmod.entity.custom.OrcInfantryEntity;
+import com.monkeyham.elendilmod.entity.custom.abstracts.GondorSoldierEntity;
+import com.monkeyham.elendilmod.entity.custom.abstracts.HumanAbstract;
 import net.minecraft.client.model.AnimationUtils;
 import net.minecraft.client.model.ArmedModel;
 import net.minecraft.client.model.HierarchicalModel;
@@ -15,13 +16,12 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.monster.AbstractIllager;
 
-public class GondorModel <T extends GondorSoldierAbstract> extends HierarchicalModel<T> implements ArmedModel {
+public class GondorModel2<T extends GondorSoldierEntity> extends HierarchicalModel<T> implements ArmedModel {
 
-    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(ElendilMod.MODID, "gondor"), "main");
+    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(ElendilMod.MODID, "gondor_soldier"), "main");
     private final ModelPart Body;
     private final ModelPart Head;
     private final ModelPart ArmL;
@@ -29,7 +29,7 @@ public class GondorModel <T extends GondorSoldierAbstract> extends HierarchicalM
     private final ModelPart LegL;
     private final ModelPart LegR;
 
-    public GondorModel(ModelPart root) {
+    public GondorModel2(ModelPart root) {
         this.Body = root.getChild("Body");
         this.Head = this.Body.getChild("Head");
         this.ArmL = this.Body.getChild("ArmL");
@@ -89,7 +89,7 @@ public class GondorModel <T extends GondorSoldierAbstract> extends HierarchicalM
     }
 
     @Override
-    public void setupAnim(GondorSoldierAbstract entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(GondorSoldierEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         this.root().getAllParts().forEach(ModelPart::resetPose);
         this.Head.yRot = netHeadYaw * (float) (Math.PI / 180.0);
         this.Head.xRot = headPitch * (float) (Math.PI / 180.0);
@@ -120,17 +120,16 @@ public class GondorModel <T extends GondorSoldierAbstract> extends HierarchicalM
             this.LegL.yRot = 0.0F;
             this.LegL.zRot = 0.0F;
         }
-        final AbstractIllager.IllagerArmPose abstractillager$illagerarmpose = entity.getArmPose();
-        if(entity instanceof GondorInfantry)
-        {
-            if (abstractillager$illagerarmpose == AbstractIllager.IllagerArmPose.ATTACKING) {
+        final HumanAbstract.HumanArmPose hap = entity.getArmPose();
+
+            if (hap == HumanAbstract.HumanArmPose.ATTACKING) {
                 if (entity.getMainHandItem().isEmpty()) {
                     AnimationUtils.animateZombieArms(this.ArmL, this.ArmR, true, this.attackTime, ageInTicks);
                 } else {
-                    AnimationUtils.swingWeaponDown(this.ArmR, this.ArmL, entity, this.attackTime, ageInTicks - ((GondorInfantry) entity).getAttackAnimationTick());
+                    AnimationUtils.swingWeaponDown(this.ArmR, this.ArmL, entity, this.attackTime, ageInTicks);
                 }
             }
-        }
+
     }
 
     @Override

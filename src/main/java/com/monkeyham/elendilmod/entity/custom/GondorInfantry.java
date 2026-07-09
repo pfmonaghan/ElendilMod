@@ -31,6 +31,9 @@ public class GondorInfantry extends GondorSoldierAbstract{
 
     public static final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout=0;
+    private int attackAnimationTick;
+    private static int attackAnimationDefault=10;
+
 
     @Override
     protected void registerGoals() {
@@ -59,6 +62,7 @@ public class GondorInfantry extends GondorSoldierAbstract{
         } else {
             --this.idleAnimationTimeout;
         }
+        //this.walkAnimation.setSpeed(1.0f);
     }
 
     @Override
@@ -71,6 +75,34 @@ public class GondorInfantry extends GondorSoldierAbstract{
         }
     }
 
+    @Override
+    public void aiStep() {
+        super.aiStep();
+        if (this.attackAnimationTick > 0) {
+            --this.attackAnimationTick;
+        }
+    }
+
+
+    @Override
+    public boolean doHurtTarget(Entity entity) {
+        this.attackAnimationTick = attackAnimationDefault;
+        return super.doHurtTarget(entity);
+    }
+
+    @Override
+    public void handleEntityEvent(byte id) {
+        if (id == 4) {
+            this.attackAnimationTick = attackAnimationDefault;
+        }
+        else{
+            super.handleEntityEvent(id);
+        }
+    }
+
+    public int getAttackAnimationTick() {
+        return this.attackAnimationTick;
+    }
 
     @Override
     public @Nullable SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty,

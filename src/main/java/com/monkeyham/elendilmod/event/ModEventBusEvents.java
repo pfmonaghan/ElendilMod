@@ -4,6 +4,7 @@ import com.monkeyham.elendilmod.ElendilMod;
 import com.monkeyham.elendilmod.entity.ModEntities;
 import com.monkeyham.elendilmod.entity.client.GeckoModel;
 import com.monkeyham.elendilmod.entity.client.Gondor.GondorModel;
+import com.monkeyham.elendilmod.entity.client.Gondor.GondorModel2;
 import com.monkeyham.elendilmod.entity.client.OrcArcherModel;
 import com.monkeyham.elendilmod.entity.client.OrcArmorModel;
 import com.monkeyham.elendilmod.entity.client.OrcInfantryModel;
@@ -11,6 +12,7 @@ import com.monkeyham.elendilmod.entity.custom.GeckoEntity;
 import com.monkeyham.elendilmod.entity.custom.GondorInfantry;
 import com.monkeyham.elendilmod.entity.custom.OrcArcherEntity;
 import com.monkeyham.elendilmod.entity.custom.OrcInfantryEntity;
+import com.monkeyham.elendilmod.entity.custom.abstracts.GondorSoldierEntity;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -27,6 +29,7 @@ public class ModEventBusEvents {
         event.registerLayerDefinition(OrcInfantryModel.LAYER_LOCATION, OrcInfantryModel::createBodyLayer);
         event.registerLayerDefinition(OrcArcherModel.LAYER_LOCATION, OrcArcherModel::createBodyLayer);
         event.registerLayerDefinition(GondorModel.LAYER_LOCATION, GondorModel::createBodyLayer);
+        event.registerLayerDefinition(GondorModel2.LAYER_LOCATION, GondorModel2::createBodyLayer);
 
 
         //event.registerLayerDefinition(OrcArmorModel.ORC_ARMOR_OUTER_LAYER_LOCATION, OrcArmorModel::createOuterArmorLayer);
@@ -40,6 +43,7 @@ public class ModEventBusEvents {
         event.put(ModEntities.ORC_INFANTRY.get(), OrcInfantryEntity.createAttributes().build());
         event.put(ModEntities.ORC_ARCHER.get(), OrcArcherEntity.createAttributes().build());
         event.put(ModEntities.GONDOR_INFANTRY.get(), GondorInfantry.createAttributes().build());
+        event.put(ModEntities.GONDOR_SOLDIER.get(), GondorSoldierEntity.createAttributes().build());
     }
 
 }

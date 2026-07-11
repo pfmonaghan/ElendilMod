@@ -25,6 +25,8 @@ public class ModItems {
             DeferredSpawnEggItem(ModEntities.ORC_ARCHER, 0x31afaf, 0xffac00, new Item.Properties()));
     public static final DeferredItem<Item> GONDOR_SOLDIER_SPAWN_EGG = ITEMS.register("gondor_soldier_spawn_egg", ()-> new
             DeferredSpawnEggItem(ModEntities.GONDOR_SOLDIER, 0x31afaf, 0xffac00, new Item.Properties()));
+public static final DeferredItem<Item> GONDOR_ARCHER_SPAWN_EGG = ITEMS.register("gondor_archer_spawn_egg", ()-> new
+            DeferredSpawnEggItem(ModEntities.GONDOR_ARCHER, 0x31afaf, 0xffac00, new Item.Properties()));
 
     public static final DeferredItem<SwordItem> MORDOR_FALCHION = ITEMS.register("mordor_falchion",
             () -> new SwordItem(Tiers.IRON, new Item.Properties().attributes(SwordItem.createAttributes(Tiers.IRON, 6, -2.45f))));

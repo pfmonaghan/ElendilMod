@@ -51,6 +51,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.ORC_INFANTRY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.ORC_ARCHER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.GONDOR_SOLDIER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.GONDOR_ARCHER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.EYE_OF_SAURON_PATTERN_ITEM.getId().getPath(), mcLoc("item/creeper_banner_pattern"));
 
         saplingItem(ModBlocks.ITHILIEN_TREE_SAPLING);

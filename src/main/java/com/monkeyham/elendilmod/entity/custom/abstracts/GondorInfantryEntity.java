@@ -1,10 +1,7 @@
 package com.monkeyham.elendilmod.entity.custom.abstracts;
 
-import com.monkeyham.elendilmod.entity.custom.OrcInfantryEntity;
 import com.monkeyham.elendilmod.item.ModItems;
 import com.monkeyham.elendilmod.sound.ModSoundEvents;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
@@ -16,14 +13,8 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.entity.monster.AbstractIllager;
-import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Enemy;
-import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.raid.Raider;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -33,11 +24,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Predicate;
 
-public class GondorSoldierEntity extends HumanAbstract{
-    public GondorSoldierEntity(EntityType<? extends PathfinderMob> entityType, Level level) {
+public class GondorInfantryEntity extends HumanAbstract{
+    public GondorInfantryEntity(EntityType<? extends PathfinderMob> entityType, Level level) {
         super(entityType, level);
     }
-
 
     public static final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout=0;
@@ -50,7 +40,7 @@ public class GondorSoldierEntity extends HumanAbstract{
         //this.goalSelector.addGoal(3, new Raider.HoldGroundAttackGoal(this, 10.0F));
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, new Class[0])).setAlertOthers(new Class[0]));
         this.goalSelector.addGoal(2, new MoveTowardsTargetGoal(this, 0.9, 32.0F));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Mob.class, 1, false, false, (p_28879_) -> p_28879_ instanceof Enemy ));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Mob.class, 1, false, false, (p_28879_) -> p_28879_ instanceof Enemy ));
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this, (double)1.0F, true));
         this.goalSelector.addGoal(8, new RandomStrollGoal(this, 0.8));
         this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 7.0F, 3.0F));
@@ -64,23 +54,6 @@ public class GondorSoldierEntity extends HumanAbstract{
                 .add(Attributes.MAX_HEALTH, 24.0)
                 .add(Attributes.ATTACK_DAMAGE, 5.0);
     }
-
-    @Override
-    protected SoundEvent getAmbientSound() {
-        return ModSoundEvents.ORC_SOUND_AMBIENT.get();
-    }
-
-    @Override
-    protected SoundEvent getDeathSound() {
-        return ModSoundEvents.ORC_SOUND_DEATH.get();
-    }
-
-    @Override
-    protected SoundEvent getHurtSound(DamageSource damageSource) {
-        return ModSoundEvents.ORC_SOUND_HURT.get();
-    }
-
-
 
     private void setupAnimationStates() {
         if(this.idleAnimationTimeout <= 0) {
@@ -122,11 +95,6 @@ public class GondorSoldierEntity extends HumanAbstract{
             return HumanAbstract.HumanArmPose.ATTACKING;
         }
         return super.getArmPose();
-    }
-
-    @Override
-    protected void playAttackSound() {
-        this.playSound(ModSoundEvents.ORC_SOUND_AMBIENT.get());
     }
 
     @Override

@@ -50,6 +50,7 @@ public class ModCreativeTabs {
                 output.accept(ModItems.GONDOR_SHIELD);
                 output.accept(ModItems.GONDOR_SPEAR);
                 output.accept(ModItems.GONDOR_SOLDIER_SPAWN_EGG);
+                output.accept(ModItems.GONDOR_ARCHER_SPAWN_EGG);
 
                 output.accept(ModBlocks.ITHILIEN_TREE_LOG);
                 output.accept(ModBlocks.ITHILIEN_TREE_WOOD);

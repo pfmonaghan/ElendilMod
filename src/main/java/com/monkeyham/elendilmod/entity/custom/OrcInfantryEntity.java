@@ -1,5 +1,6 @@
 package com.monkeyham.elendilmod.entity.custom;
 
+import com.google.common.collect.ImmutableList;
 import com.monkeyham.elendilmod.entity.custom.abstracts.HumanAbstract;
 import com.monkeyham.elendilmod.item.ModItems;
 import com.monkeyham.elendilmod.sound.ModSoundEvents;
@@ -29,14 +30,22 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.storage.loot.LootParams;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Arrays;
 import java.util.function.Predicate;
 
-public class OrcInfantryEntity extends AbstractIllager implements Enemy {
+public class OrcInfantryEntity extends OrcAbstract {
 
 
     public static final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout=0;
     static final Predicate<Difficulty> DOOR_BREAKING_PREDICATE = (difficulty)->{return difficulty== Difficulty.NORMAL;};
+    //private final boolean isWearingHelmet; this.isWearingHelmet = level.getRandom().nextBoolean();
+
+    public OrcInfantryEntity(EntityType<? extends OrcInfantryEntity> entityType, Level level) {
+        super(entityType, level);
+    }
+
+
 
     @Override
     protected void registerGoals() {
@@ -64,22 +73,6 @@ public class OrcInfantryEntity extends AbstractIllager implements Enemy {
                 .add(Attributes.ATTACK_DAMAGE, 5.0);
     }
 
-    @Override
-    protected SoundEvent getAmbientSound() {
-        return ModSoundEvents.ORC_SOUND_AMBIENT.get();
-    }
-
-    @Override
-    protected SoundEvent getDeathSound() {
-        return ModSoundEvents.ORC_SOUND_DEATH.get();
-    }
-
-    @Override
-    protected SoundEvent getHurtSound(DamageSource damageSource) {
-        return ModSoundEvents.ORC_SOUND_HURT.get();
-    }
-
-
 
     private void setupAnimationStates() {
         if(this.idleAnimationTimeout <= 0) {
@@ -88,11 +81,6 @@ public class OrcInfantryEntity extends AbstractIllager implements Enemy {
         } else {
             --this.idleAnimationTimeout;
         }
-    }
-
-    public OrcInfantryEntity(EntityType<? extends OrcInfantryEntity> entityType, Level level) {
-        super(entityType, level);
-
     }
 
 
@@ -111,10 +99,6 @@ public class OrcInfantryEntity extends AbstractIllager implements Enemy {
         this.setItemSlot(EquipmentSlot.MAINHAND, itemstack);
     }
 
-    @Override
-    public SoundEvent getCelebrateSound() {
-        return null;
-    }
 
     @Override
     public void tick() {
@@ -140,13 +124,13 @@ public class OrcInfantryEntity extends AbstractIllager implements Enemy {
         return super.getArmPose();
     }
 
-    @Override
-    protected void playAttackSound() {
-        this.playSound(ModSoundEvents.ORC_SOUND_AMBIENT.get());
-    }
+
 
     @Override
     protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
+
+        //this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(Items.IRON_HELMET));
+        //this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(Items.IRON_CHESTPLATE));
 
         int mainItemInt = random.nextInt(100);
         if(mainItemInt<49){
@@ -168,5 +152,8 @@ public class OrcInfantryEntity extends AbstractIllager implements Enemy {
         super.populateDefaultEquipmentSlots(random, difficulty);
     }
 
-
+//    @Override
+//    public boolean isWearingHelmet() {
+//        return this.isWearingHelmet;
+//    }
 }

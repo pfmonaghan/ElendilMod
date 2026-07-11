@@ -2,6 +2,7 @@ package com.monkeyham.elendilmod.entity.custom.abstracts;
 
 import com.monkeyham.elendilmod.entity.ModEntities;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.EntityTypeTags;
@@ -28,11 +29,12 @@ public abstract class HumanAbstract extends PathfinderMob {
         this.updateSwingTime();
         this.updateNoActionTime();
         super.aiStep();
-        LivingEntity livingentity = this.getTarget();
-        if (livingentity != null && (livingentity instanceof Enemy)) {
-            this.noActionTime = 0;
-        }
-
+//        if (this.level() instanceof ServerLevel && this.isAlive()) {
+//            LivingEntity livingentity = this.getTarget();
+//            if (livingentity != null && (livingentity instanceof Enemy)) {
+//                this.noActionTime = 0;
+//            }
+//        }
     }
 
     protected void updateNoActionTime() {
@@ -64,7 +66,7 @@ public abstract class HumanAbstract extends PathfinderMob {
     }
 
     public float getWalkTargetValue(BlockPos pos, LevelReader level) {
-        return -level.getPathfindingCostFromLightLevels(pos);
+        return 0;
     }
 
     protected void registerGoals() {
@@ -76,7 +78,7 @@ public abstract class HumanAbstract extends PathfinderMob {
     }
 
     public boolean canAttack(LivingEntity target) {
-        return target instanceof Enemy;
+        return super.canAttack(target);
     }
 
     @Override
@@ -106,6 +108,8 @@ public abstract class HumanAbstract extends PathfinderMob {
         NEUTRAL;
     }
 
-
-
+    @Override
+    public void checkDespawn() {
+        super.checkDespawn();
+    }
 }

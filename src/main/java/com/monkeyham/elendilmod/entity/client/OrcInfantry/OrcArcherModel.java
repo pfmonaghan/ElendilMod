@@ -1,4 +1,4 @@
-package com.monkeyham.elendilmod.entity.client;
+package com.monkeyham.elendilmod.entity.client.OrcInfantry;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -85,10 +85,7 @@ public class OrcArcherModel<T extends OrcArcherEntity> extends HierarchicalModel
         final AbstractIllager.IllagerArmPose state = entity.getArmPose();
         if(state == AbstractIllager.IllagerArmPose.BOW_AND_ARROW)
         {
-
             AnimationUtils.animateCrossbowHold(this.ArmR, this.ArmL, this.Head, !entity.isLeftHanded());
-
-
         }
     }
 

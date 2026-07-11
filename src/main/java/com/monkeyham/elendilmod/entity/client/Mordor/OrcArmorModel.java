@@ -1,8 +1,7 @@
-package com.monkeyham.elendilmod.entity.client;
+package com.monkeyham.elendilmod.entity.client.Mordor;
 
 import com.monkeyham.elendilmod.ElendilMod;
 import com.monkeyham.elendilmod.entity.custom.OrcInfantryEntity;
-import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;

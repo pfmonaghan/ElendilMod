@@ -22,11 +22,11 @@ public class OrcArmorModel <T extends OrcInfantryEntity> extends HumanoidModel<O
 
     public static LayerDefinition createOuterArmorLayer()
     {
-        MeshDefinition meshDefinition = OrcArmorModel.createMesh(new CubeDeformation(1.0F), 0.0F);
+        MeshDefinition meshDefinition = OrcModel.createMesh(new CubeDeformation(.2F), -1.0F);
                 //HumanoidModel.createMesh( new CubeDeformation(1.0F), 0.0F);
         PartDefinition partDefinition = meshDefinition.getRoot();
-        partDefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -10.0F, -4.0F,
-                8.0F, 8.0F, 8.0F, new CubeDeformation(1.0F)), PartPose.offset(0.0F, 1.0F, 0.0F));
+        partDefinition.addOrReplaceChild("Head", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -10.0F, -4.0F,
+                8.0F, 8.0F, 8.0F, new CubeDeformation(1.0F)), PartPose.offset(0.0F, -1.0F, 0.0F));
         partDefinition.addOrReplaceChild(
                 "hat",
                 CubeListBuilder.create().texOffs(32, 0).addBox(-4.0F, -10.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(1.5F)),
@@ -35,7 +35,7 @@ public class OrcArmorModel <T extends OrcInfantryEntity> extends HumanoidModel<O
     }
 
     public static LayerDefinition createInnerArmorLayer() {
-        MeshDefinition meshdefinition = OrcArmorModel.createMesh(new CubeDeformation(0.5F), 0.0F);
+        MeshDefinition meshdefinition = OrcModel.createMesh(new CubeDeformation(0.5F), 5.0F);
                 //HumanoidModel.createMesh(new CubeDeformation(0.5F), 0.0F);
         return LayerDefinition.create(meshdefinition, 64, 32);
     }

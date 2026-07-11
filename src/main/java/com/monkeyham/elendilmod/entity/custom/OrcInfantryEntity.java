@@ -129,8 +129,8 @@ public class OrcInfantryEntity extends OrcAbstract {
     @Override
     protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInstance difficulty) {
 
-        //this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(Items.IRON_HELMET));
-        //this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(Items.IRON_CHESTPLATE));
+        this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(Items.IRON_HELMET));
+        this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(Items.IRON_CHESTPLATE));
 
         int mainItemInt = random.nextInt(100);
         if(mainItemInt<49){

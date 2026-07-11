@@ -5,7 +5,6 @@ import com.monkeyham.elendilmod.entity.ModEntities;
 import com.monkeyham.elendilmod.entity.client.GeckoModel;
 import com.monkeyham.elendilmod.entity.client.Gondor.GondorModel;
 import com.monkeyham.elendilmod.entity.client.Mordor.OrcArmorModel;
-import com.monkeyham.elendilmod.entity.client.OrcInfantry.OrcArcherModel;
 import com.monkeyham.elendilmod.entity.client.Mordor.OrcModel;
 import com.monkeyham.elendilmod.entity.custom.GeckoEntity;
 import com.monkeyham.elendilmod.entity.custom.OrcArcherEntity;

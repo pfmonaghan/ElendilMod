@@ -3,6 +3,7 @@ package com.monkeyham.elendilmod.item;
 import com.monkeyham.elendilmod.ElendilMod;
 import com.monkeyham.elendilmod.entity.ModEntities;
 import com.monkeyham.elendilmod.item.custom.ModBannerPatterns;
+import com.monkeyham.elendilmod.item.custom.armor.Mordor.MordorHelmet1;
 import com.monkeyham.elendilmod.item.custom.shields.GondorShield;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -34,6 +35,10 @@ public static final DeferredItem<Item> GONDOR_ARCHER_SPAWN_EGG = ITEMS.register(
             () -> new AxeItem(Tiers.IRON, new Item.Properties().attributes(AxeItem.createAttributes(Tiers.IRON, 7, -2.85f))));
     public static final DeferredItem<SwordItem> MORDOR_MACE = ITEMS.register("mordor_mace",
             () -> new SwordItem(Tiers.IRON, new Item.Properties().attributes(SwordItem.createAttributes(Tiers.IRON, 4.5f, -2.15f))));
+    public static final DeferredItem<MordorHelmet1> MORDOR_HELMET_1 = ITEMS.register("mordor_helmet_1",
+            () -> new MordorHelmet1(ArmorMaterials.IRON, ArmorItem.Type.HELMET, new Item.Properties()));
+public static final DeferredItem<MordorHelmet1> MORDOR_CHESTPLATE_1 = ITEMS.register("mordor_chestplate_1",
+            () -> new MordorHelmet1(ArmorMaterials.IRON, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
     public static final DeferredItem<SwordItem> MORDOR_HALBERD = ITEMS.register("mordor_halberd",
             () -> new SwordItem(Tiers.IRON, new Item.Properties().attributes(SwordItem.createAttributes(Tiers.IRON, 7, -3.45f))));
@@ -43,6 +48,7 @@ public static final DeferredItem<Item> GONDOR_ARCHER_SPAWN_EGG = ITEMS.register(
             () -> new SwordItem(Tiers.IRON, new Item.Properties().attributes(SwordItem.createAttributes(Tiers.IRON, 8, -3.95f))));
     public static final DeferredItem<GondorShield> GONDOR_SHIELD = ITEMS.register("gondor_shield",
             () -> new GondorShield(8, new Item.Properties()));
+
     public static final DeferredItem<GondorShield> MORDOR_SHIELD_1 = ITEMS.register("mordor_shield_1",
             () -> new GondorShield(8, new Item.Properties()));
 

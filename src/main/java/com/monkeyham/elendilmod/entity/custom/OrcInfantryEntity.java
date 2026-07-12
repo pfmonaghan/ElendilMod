@@ -131,6 +131,8 @@ public class OrcInfantryEntity extends OrcAbstract {
 
         this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(Items.IRON_HELMET));
         this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(Items.IRON_CHESTPLATE));
+        this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(Items.IRON_LEGGINGS));
+        this.setItemSlot(EquipmentSlot.FEET, new ItemStack(Items.IRON_BOOTS));
 
         int mainItemInt = random.nextInt(100);
         if(mainItemInt<49){

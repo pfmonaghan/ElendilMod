@@ -145,6 +145,8 @@ public class ModCreativeTabs {
             output.accept(ModItems.MORDOR_HALBERD);
             output.accept(ModItems.MORDOR_GLAIVE);
                 output.accept(ModItems.MORDOR_SHIELD_1);
+                output.accept(ModItems.MORDOR_HELMET_1);
+                output.accept(ModItems.MORDOR_CHESTPLATE_1);
             output.accept(ModItems.ORC_INFANTRY_SPAWN_EGG);
             output.accept(ModItems.ORC_ARCHER_SPAWN_EGG);
             output.accept(ModItems.EYE_OF_SAURON_PATTERN_ITEM);

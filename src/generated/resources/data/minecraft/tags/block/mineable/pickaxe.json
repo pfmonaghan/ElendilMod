@@ -61,6 +61,12 @@
     "elendilmod:2x2_arch_top",
     "elendilmod:2x2_arch_middle",
     "elendilmod:2x2_arch_bottom",
-    "elendilmod:1x1_arch"
+    "elendilmod:1x1_arch",
+    "elendilmod:gondor_small_bricks",
+    "elendilmod:gondor_small_bricks_slab",
+    "elendilmod:gondor_small_bricks_wall",
+    "elendilmod:gondor_small_bricks_stairs",
+    "elendilmod:gondor_large_stone_brick",
+    "elendilmod:rohan_large_stone_brick"
   ]
 }

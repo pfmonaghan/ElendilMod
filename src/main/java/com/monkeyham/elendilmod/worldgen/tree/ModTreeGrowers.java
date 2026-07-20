@@ -1,7 +1,7 @@
 package com.monkeyham.elendilmod.worldgen.tree;
 
 import com.monkeyham.elendilmod.ElendilMod;
-import com.monkeyham.elendilmod.worldgen.ModConfiguredFeatures;
+import com.monkeyham.elendilmod.worldgen.features.ModConfiguredFeatures;
 import net.minecraft.world.level.block.grower.TreeGrower;
 
 import java.util.Optional;

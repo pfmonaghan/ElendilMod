@@ -59,8 +59,19 @@ public static final DeferredBlock<WallBlock> OSGILIATH_RUBBLE_WALL = registerBlo
     public static final DeferredBlock<WallBlock> OSGILIATH_STONE_BRICK_1_WALL = registerBlock("osgiliath_stone_brick_1_wall",
             ()->new WallBlock(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
 
+    public static final DeferredBlock<Block> THATCH = registerBlock("thatch",
+            ()-> new Block(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops().sound(SoundType.GRASS)));
+    public static final DeferredBlock<SlabBlock> THATCH_SLAB = registerBlock("thatch_slab",
+            ()-> new SlabBlock(BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops().sound(SoundType.GRASS)));
+    public static final DeferredBlock<StairBlock> THATCH_STAIRS = registerBlock("thatch_stairs",
+            ()-> new StairBlock(ModBlocks.THATCH.get().defaultBlockState(),BlockBehaviour.Properties.of().strength(.5f).requiresCorrectToolForDrops().sound(SoundType.GRASS)));
 
-public static final DeferredBlock<Block> OSGILIATH_ARCH_PANE = registerBlock("osgiliath_arch_pane",
+    public static final DeferredBlock<LargeStoneBrick> ROHAN_LARGE_STONE_BRICK = registerBlock("rohan_large_stone_brick",
+            ()->new LargeStoneBrick(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noOcclusion()));
+
+
+
+    public static final DeferredBlock<Block> OSGILIATH_ARCH_PANE = registerBlock("osgiliath_arch_pane",
             ()-> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noCollission()));
     public static final DeferredBlock<Block> OSGILIATH_ARCH_PANE_BOTTOM = registerBlock("osgiliath_arch_pane_bottom",
             ()-> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noCollission()));
@@ -78,6 +89,19 @@ public static final DeferredBlock<Block> OSGILIATH_ARCH_PANE = registerBlock("os
             ()->new OrientableBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noOcclusion()));
     public static final DeferredBlock<Block> OSGILIATH_DOME_9x9 = registerBlock("osgiliath_dome_9x9",
             ()->new OrientableBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noOcclusion()));
+
+    public static final DeferredBlock<LargeStoneBrick> GONDOR_LARGE_STONE_BRICK = registerBlock("gondor_large_stone_brick",
+            ()->new LargeStoneBrick(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noOcclusion()));
+
+    public static final DeferredBlock<Block> GONDOR_SMALL_BRICKS = registerBlock("gondor_small_bricks",
+            ()->new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noOcclusion()));
+    public static final DeferredBlock<SlabBlock> GONDOR_SMALL_BRICKS_SLAB = registerBlock("gondor_small_bricks_slab",
+            ()->new SlabBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noOcclusion()));
+    public static final DeferredBlock<WallBlock> GONDOR_SMALL_BRICKS_WALL = registerBlock("gondor_small_bricks_wall",
+            ()->new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE).noOcclusion()));
+    public static final DeferredBlock<StairBlock> GONDOR_SMALL_BRICKS_STAIRS = registerBlock("gondor_small_bricks_stairs",
+            ()-> new StairBlock(ModBlocks.GONDOR_SMALL_BRICKS.get().defaultBlockState(),BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+
 
     public static final DeferredBlock<Block> MORDOR_BLOCK_1 = registerBlock("mordor_block_1",
             ()-> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)));

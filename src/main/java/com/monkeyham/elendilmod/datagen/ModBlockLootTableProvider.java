@@ -52,6 +52,14 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.OSGILIATH_DOME_9x9.get());
         dropSelf(ModBlocks.OSGILIATH_DOOR_1.get());
 
+        dropSelf(ModBlocks.GONDOR_SMALL_BRICKS.get());
+        dropSelf(ModBlocks.GONDOR_SMALL_BRICKS_SLAB.get());
+        dropSelf(ModBlocks.GONDOR_SMALL_BRICKS_WALL.get());
+        dropSelf(ModBlocks.GONDOR_SMALL_BRICKS_STAIRS.get());
+
+        dropSelf(ModBlocks.GONDOR_LARGE_STONE_BRICK.get());
+        dropSelf(ModBlocks.ROHAN_LARGE_STONE_BRICK.get());
+
 
         dropSelf(ModBlocks.MORDOR_BLOCK_1.get());
         dropSelf(ModBlocks.MORDOR_BLOCK_1_SLAB.get());
@@ -115,6 +123,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.ARCH_2x2_BOTTOM.get());
         dropSelf(ModBlocks.ARCH_1x1.get());
         dropSelf(ModBlocks.POLISHED_DIORITE_WALL.get());
+
+        dropSelf(ModBlocks.THATCH.get());
+        dropSelf(ModBlocks.THATCH_SLAB.get());
+        dropSelf(ModBlocks.THATCH_STAIRS.get());
 
 
     }

@@ -2,10 +2,12 @@ package com.monkeyham.elendilmod.datagen;
 
 import com.monkeyham.elendilmod.ElendilMod;
 import com.monkeyham.elendilmod.block.ModBlocks;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
+import net.neoforged.neoforge.client.NeoForgeRenderTypes;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -44,6 +46,32 @@ public class ModBlockStateProvider extends BlockStateProvider {
         stairBlockWithItem(ModBlocks.OSGILIATH_STONE_BRICK_1_STAIRS, ModBlocks.OSGILIATH_STONE_BRICK_1);
         wallBlock(ModBlocks.OSGILIATH_STONE_BRICK_1_WALL.get(), blockTexture(ModBlocks.OSGILIATH_STONE_BRICK_1.get()));
 
+        blockWithItem(ModBlocks.THATCH);
+        slabBlockWithItem(ModBlocks.THATCH_SLAB, ModBlocks.THATCH);
+        stairBlockWithItem(ModBlocks.THATCH_STAIRS, ModBlocks.THATCH);
+
+        blockWithItem(ModBlocks.GONDOR_SMALL_BRICKS);
+        slabBlockWithItem(ModBlocks.GONDOR_SMALL_BRICKS_SLAB, ModBlocks.GONDOR_SMALL_BRICKS);
+        stairBlockWithItem(ModBlocks.GONDOR_SMALL_BRICKS_STAIRS, ModBlocks.GONDOR_SMALL_BRICKS);
+        wallBlock(ModBlocks.GONDOR_SMALL_BRICKS_WALL.get(), blockTexture(ModBlocks.GONDOR_SMALL_BRICKS.get()));
+
+this.directionalBlock(ModBlocks.GONDOR_LARGE_STONE_BRICK.get(), models().orientable("block/gondor_large_stone_brick",
+        ResourceLocation.fromNamespaceAndPath(ElendilMod.MODID, "block/gondor_large_stone_brick"),
+        ResourceLocation.fromNamespaceAndPath(ElendilMod.MODID, "block/gondor_large_stone_brick"),
+        ResourceLocation.fromNamespaceAndPath(ElendilMod.MODID, "block/gondor_large_stone_brick"))
+);
+this.directionalBlock(ModBlocks.ROHAN_LARGE_STONE_BRICK.get(),models().orientable("block/rohan_large_stone_brick",
+        ResourceLocation.fromNamespaceAndPath(ElendilMod.MODID, "block/rohan_large_stone_brick"),
+        ResourceLocation.fromNamespaceAndPath(ElendilMod.MODID, "block/rohan_large_stone_brick"),
+        ResourceLocation.fromNamespaceAndPath(ElendilMod.MODID, "block/rohan_large_stone_brick"))
+);
+        blockItem(ModBlocks.GONDOR_LARGE_STONE_BRICK);
+        blockItem(ModBlocks.ROHAN_LARGE_STONE_BRICK);
+
+//        this.logBlockWithRenderType((RotatedPillarBlock) ModBlocks.GONDOR_LARGE_STONE_BRICK.get(), RenderType.SOLID.name);
+//        blockItem(ModBlocks.GONDOR_LARGE_STONE_BRICK);
+//        this.logBlockWithRenderType((RotatedPillarBlock) ModBlocks.ROHAN_LARGE_STONE_BRICK.get(), RenderType.SOLID.name);
+//        blockItem(ModBlocks.ROHAN_LARGE_STONE_BRICK);
 
         blockWithItem(ModBlocks.MORDOR_BLOCK_1);
         slabBlockWithItem(ModBlocks.MORDOR_BLOCK_1_SLAB, ModBlocks.MORDOR_BLOCK_1);
@@ -128,10 +156,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     }
 
+//    private void RotatedPillarBlockWithItem(DeferredBlock<?> deferredBlock)
+//    {
+//
+//        blockItem(deferredBlock);
+//    }
+
     private void blockItem(DeferredBlock<?> deferredBlock)
     {
         simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("elendilmod:block/" + deferredBlock.getId().getPath()));
     }
+
+
 
     private void blockItem(DeferredBlock<?> deferredBlock, String appendix)
     {

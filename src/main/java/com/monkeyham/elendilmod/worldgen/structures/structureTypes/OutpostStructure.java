@@ -117,6 +117,6 @@ public class OutpostStructure extends Structure {
 
     @Override
     public StructureType<?> type() {
-        return ModStructures.OUTPOST_STRUCTURE.get();
+        return StructureType.FORTRESS;//ModStructures.OUTPOST_STRUCTURE.get();
     }
 }

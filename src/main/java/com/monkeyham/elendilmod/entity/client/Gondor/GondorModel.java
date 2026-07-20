@@ -1,9 +1,8 @@
 package com.monkeyham.elendilmod.entity.client.Gondor;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.monkeyham.elendilmod.ElendilMod;
-import com.monkeyham.elendilmod.entity.custom.abstracts.HumanAbstract;
+import com.monkeyham.elendilmod.entity.custom.Gondor.HumanAbstract;
 import net.minecraft.client.model.AnimationUtils;
 import net.minecraft.client.model.ArmedModel;
 import net.minecraft.client.model.HierarchicalModel;
@@ -14,7 +13,6 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.HumanoidArm;
-import net.minecraft.world.entity.monster.AbstractIllager;
 
 public class GondorModel<T extends HumanAbstract> extends HierarchicalModel<T> implements ArmedModel {
 

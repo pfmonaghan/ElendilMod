@@ -1,5 +1,5 @@
-// 1.21.1	2026-03-10T17:15:22.4705508	Tags for minecraft:block mod id elendilmod
+// 1.21.1	2026-07-20T17:02:26.3037856	Tags for minecraft:block mod id elendilmod
 b198e167e15818b870cb4aa5a1fa76a89a7695d2 data/minecraft/tags/block/logs_that_burn.json
 dd185e0684e673ba19994c48eab0c36a19efad9a data/minecraft/tags/block/mineable/axe.json
-13d082e41eebf60b757af13b2c4e325352a5a962 data/minecraft/tags/block/mineable/pickaxe.json
-ee3901912db6e0e381b98106427096c5526a1a11 data/minecraft/tags/block/walls.json
+71e7cbfd2e81faee392ab7eb78d1c18d804b5f5d data/minecraft/tags/block/mineable/pickaxe.json
+7917edb6a3cc5e6715b8c64092cd592d6ab4b78a data/minecraft/tags/block/walls.json

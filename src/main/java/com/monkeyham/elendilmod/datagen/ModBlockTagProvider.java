@@ -83,6 +83,12 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.ARCH_2x2_MIDDLE.get())
                 .add(ModBlocks.ARCH_2x2_BOTTOM.get())
                 .add(ModBlocks.ARCH_1x1.get())
+                .add(ModBlocks.GONDOR_SMALL_BRICKS.get())
+                .add(ModBlocks.GONDOR_SMALL_BRICKS_SLAB.get())
+                .add(ModBlocks.GONDOR_SMALL_BRICKS_WALL.get())
+                .add(ModBlocks.GONDOR_SMALL_BRICKS_STAIRS.get())
+                .add(ModBlocks.GONDOR_LARGE_STONE_BRICK.get())
+                .add(ModBlocks.ROHAN_LARGE_STONE_BRICK.get())
         ;
 
         tag(BlockTags.MINEABLE_WITH_AXE)
@@ -102,7 +108,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.MORDOR_BLOCK_5_WALL.get())
                 .add(ModBlocks.MORDOR_BLOCK_6_WALL.get())
                 .add(ModBlocks.CIRITH_UNGOL_WALL.get())
-                .add(ModBlocks.POLISHED_DIORITE_WALL.get());
+                .add(ModBlocks.POLISHED_DIORITE_WALL.get())
+                .add(ModBlocks.GONDOR_SMALL_BRICKS_WALL.get());
         tag(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.ITHILIEN_TREE_LOG.get())
                 .add(ModBlocks.ITHILIEN_TREE_WOOD.get())

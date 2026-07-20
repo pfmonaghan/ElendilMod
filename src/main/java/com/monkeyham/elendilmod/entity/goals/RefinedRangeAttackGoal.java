@@ -135,7 +135,7 @@ public class RefinedRangeAttackGoal<T extends Mob & RangedAttackMob> extends Goa
                     this.mob.stopUsingItem();
                 } else if (flag) {
                     int i = this.mob.getTicksUsingItem();
-                    if (i >= 20) {
+                    if (i >= 30) { //original 20
                         this.mob.stopUsingItem();
                         ((RangedAttackMob)this.mob).performRangedAttack(livingentity, BowItem.getPowerForTime(i));
                         this.attackTime = this.attackIntervalMin;

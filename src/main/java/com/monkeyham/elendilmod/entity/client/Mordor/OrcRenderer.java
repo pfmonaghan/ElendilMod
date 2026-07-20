@@ -2,8 +2,7 @@ package com.monkeyham.elendilmod.entity.client.Mordor;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.monkeyham.elendilmod.ElendilMod;
-import com.monkeyham.elendilmod.entity.custom.OrcAbstract;
-import com.monkeyham.elendilmod.entity.custom.OrcInfantryEntity;
+import com.monkeyham.elendilmod.entity.custom.Mordor.OrcAbstract;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;

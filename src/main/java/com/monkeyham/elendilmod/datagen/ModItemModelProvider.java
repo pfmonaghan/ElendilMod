@@ -37,6 +37,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         wallItem(ModBlocks.OSGILIATH_RUBBLE_WALL, ModBlocks.OSGILIATH_RUBBLE_1);
         wallItem(ModBlocks.OSGILIATH_STONE_1_WALL, ModBlocks.OSGILIATH_STONE_1);
         wallItem(ModBlocks.OSGILIATH_STONE_BRICK_1_WALL, ModBlocks.OSGILIATH_STONE_BRICK_1);
+        wallItem(ModBlocks.GONDOR_SMALL_BRICKS_WALL, ModBlocks.GONDOR_SMALL_BRICKS);
         wallItem(ModBlocks.MORDOR_BLOCK_1_WALL, ModBlocks.MORDOR_BLOCK_1);
         wallItem(ModBlocks.MORDOR_BLOCK_2_WALL, ModBlocks.MORDOR_BLOCK_2);
         wallItem(ModBlocks.MORDOR_BLOCK_3_WALL, ModBlocks.MORDOR_BLOCK_3);
@@ -50,6 +51,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.GECKO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.ORC_INFANTRY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.ORC_ARCHER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.ORC_HUMANOID_INFANTRY_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.GONDOR_SOLDIER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.GONDOR_ARCHER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.EYE_OF_SAURON_PATTERN_ITEM.getId().getPath(), mcLoc("item/creeper_banner_pattern"));

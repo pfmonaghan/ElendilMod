@@ -2,10 +2,12 @@ package com.monkeyham.elendilmod.entity;
 
 import com.monkeyham.elendilmod.ElendilMod;
 import com.monkeyham.elendilmod.entity.custom.GeckoEntity;
-import com.monkeyham.elendilmod.entity.custom.OrcArcherEntity;
-import com.monkeyham.elendilmod.entity.custom.OrcInfantryEntity;
-import com.monkeyham.elendilmod.entity.custom.abstracts.GondorArcherEntity;
-import com.monkeyham.elendilmod.entity.custom.abstracts.GondorInfantryEntity;
+import com.monkeyham.elendilmod.entity.custom.Mordor.OlogHaiEntity;
+import com.monkeyham.elendilmod.entity.custom.Mordor.OrcArcherEntity;
+import com.monkeyham.elendilmod.entity.custom.Mordor.OrcHumanoidInfantryEntity;
+import com.monkeyham.elendilmod.entity.custom.Mordor.OrcInfantryEntity;
+import com.monkeyham.elendilmod.entity.custom.Gondor.GondorArcherEntity;
+import com.monkeyham.elendilmod.entity.custom.Gondor.GondorInfantryEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -39,6 +41,14 @@ public class ModEntities {
             ENTITY_TYPES.register("gondor_archer", ()->EntityType.Builder
                     .of(GondorArcherEntity::new, MobCategory.MISC).sized(.75f, 1.85f)
                     .build("gondor_archer"));
+        public static final Supplier<EntityType<OrcHumanoidInfantryEntity>> ORC_HUMANOID_INFANTRY =
+            ENTITY_TYPES.register("orc_humanoid_infantry", ()->EntityType.Builder
+                    .of(OrcHumanoidInfantryEntity::new, MobCategory.MISC).sized(.75f, 1.85f)
+                    .build("orc_humanoid_infantry"));
+        public static final Supplier<EntityType<OlogHaiEntity>> OLOG_HAI =
+            ENTITY_TYPES.register("olog_hai", ()->EntityType.Builder
+                    .of(OlogHaiEntity::new, MobCategory.MISC).sized(.75f, 1.85f)
+                    .build("olog_hai"));
 
     public static void register(IEventBus eventBus)
     {

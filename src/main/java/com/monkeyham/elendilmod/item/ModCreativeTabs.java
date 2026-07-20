@@ -72,11 +72,30 @@ public class ModCreativeTabs {
                 output.accept(ModBlocks.ARCH_2x2_BOTTOM);
                 output.accept(ModBlocks.ARCH_1x1);
 
+                output.accept(ModBlocks.GONDOR_LARGE_STONE_BRICK);
+
+                output.accept(ModBlocks.GONDOR_SMALL_BRICKS);
+                output.accept(ModBlocks.GONDOR_SMALL_BRICKS_SLAB);
+                output.accept(ModBlocks.GONDOR_SMALL_BRICKS_WALL);
+                output.accept(ModBlocks.GONDOR_SMALL_BRICKS_STAIRS);
 
 
             })
 
             .build());
+
+    public static final Supplier<CreativeModeTab> ROHAN_TAB = CREATIVE_MODE_TAB.register("rohan_tab", ()->CreativeModeTab.builder()
+            .icon(()->new ItemStack(ModBlocks.THATCH))
+            .title(Component.translatable("creativetab.elendilmod.rohan"))
+            .displayItems((itemDisplayParameters, output)->{
+
+                output.accept(ModBlocks.THATCH);
+                output.accept(ModBlocks.THATCH_SLAB);
+                output.accept(ModBlocks.THATCH_STAIRS);
+
+                output.accept(ModBlocks.ROHAN_LARGE_STONE_BRICK);
+
+            }).build());
 
     public static final Supplier<CreativeModeTab> DEAD_MARSHES_TAB = CREATIVE_MODE_TAB.register("dead_marshes_tab", ()->CreativeModeTab.builder()
             .icon(()->new ItemStack(ModBlocks.DEAD_MARSHES_GRASS_1))
@@ -149,6 +168,7 @@ public class ModCreativeTabs {
                 output.accept(ModItems.MORDOR_CHESTPLATE_1);
             output.accept(ModItems.ORC_INFANTRY_SPAWN_EGG);
             output.accept(ModItems.ORC_ARCHER_SPAWN_EGG);
+            output.accept(ModItems.ORC_HUMANOID_INFANTRY_SPAWN_EGG);
             output.accept(ModItems.EYE_OF_SAURON_PATTERN_ITEM);
             }).build());
 
